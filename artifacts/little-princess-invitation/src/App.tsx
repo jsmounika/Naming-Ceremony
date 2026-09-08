@@ -206,7 +206,7 @@ function App() {
         .premium-story-grid { display: grid; grid-template-columns: .86fr 1.14fr; gap: clamp(38px, 8vw, 126px); align-items: center; }
         .premium-story-photo { position: relative; padding: 0 0 26px 26px; }
         .premium-story-photo::before { position: absolute; inset: 28px 26px 0 0; border: 1px solid var(--premium-gold); content: ''; }
-        .premium-story-photo img { position: relative; display: block; width: 100%; aspect-ratio: 1.42; border-radius: 28px 150px 22px 22px; object-fit: cover; }
+        .premium-story-photo img { position: relative; display: block; width: 100%; height: auto; border-radius: 28px 150px 22px 22px; background: #f0ddd7; object-fit: contain; }
         .premium-story-copy blockquote { margin: 0; color: var(--premium-wine); font-family: var(--premium-serif); font-size: clamp(32px, 3.7vw, 55px); line-height: .99; }
         .premium-story-copy blockquote::before { display: block; margin-bottom: 8px; color: var(--premium-gold); content: '“'; font-family: var(--premium-display); font-size: 79px; line-height: .35; }
         .premium-story-copy p { max-width: 530px; margin: 28px 0 0; color: #795f63; line-height: 1.85; }
