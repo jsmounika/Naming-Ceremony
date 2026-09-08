@@ -275,6 +275,7 @@ function App() {
         .premium-closing p { max-width: 510px; margin: 0 auto; color: #775e61; font-family: var(--premium-serif); font-size: 23px; line-height: 1.2; }
         .premium-closing .premium-actions { justify-content: center; }
         .premium-footer { display: flex; justify-content: space-between; gap: 25px; padding: 25px clamp(24px, 7vw, 108px); border-top: 1px solid #e0cfc2; color: #967577; font-size: 9px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+        .premium-footer span:first-child { color: var(--premium-wine); font-family: var(--premium-serif); font-size: 18px; font-weight: 600; letter-spacing: .02em; text-transform: none; }
         .premium-lightbox-backdrop { position: fixed; z-index: 50; inset: 0; display: grid; place-items: center; padding: 20px; background: rgba(44,20,30,.92); animation: premium-fade .3s ease both; }
         .premium-lightbox { position: relative; display: grid; grid-template-columns: auto minmax(0, 860px) auto; width: min(100%, 1120px); align-items: center; gap: 18px; }
         .premium-lightbox-figure { margin: 0; text-align: center; }
@@ -362,7 +363,7 @@ function App() {
           <a href="#premium-home">Home</a>
           <a href="#premium-story">Her story</a>
           <a href="#premium-details">The ceremony</a>
-          <a href="#premium-location">JMS House</a>
+          <a href="#premium-location">Location / Venue</a>
           <a href="#premium-gallery">Album</a>
         </nav>
         <button className="premium-menu-button" type="button" aria-label={menuOpen ? 'Close menu' : 'Open menu'} aria-expanded={menuOpen} onClick={() => setMenuOpen((open) => !open)}>
@@ -373,7 +374,7 @@ function App() {
         <a href="#premium-home" onClick={() => setMenuOpen(false)}>Home</a>
         <a href="#premium-story" onClick={() => setMenuOpen(false)}>Her story</a>
         <a href="#premium-details" onClick={() => setMenuOpen(false)}>The ceremony</a>
-        <a href="#premium-location" onClick={() => setMenuOpen(false)}>JMS House</a>
+        <a href="#premium-location" onClick={() => setMenuOpen(false)}>Location / Venue</a>
         <a href="#premium-gallery" onClick={() => setMenuOpen(false)}>Album</a>
       </nav>
 
@@ -462,8 +463,8 @@ function App() {
               <div><h3>10:00 AM IST</h3><p>We will begin the ceremony in the morning, followed by time together over food and conversation.</p><small>The ceremony begins promptly</small></div>
             </div>
             <div className="premium-detail-row">
-              <div className="premium-detail-icon"><Heart size={20} /></div>
-              <div><h3>Come with your blessings</h3><p>Your presence is the most treasured gift. Traditional attire and your warmest wishes are warmly welcomed.</p><small>From our family to yours</small></div>
+              <div className="premium-detail-icon"><MapPin size={20} /></div>
+              <div><h3>Venue</h3><p>JMS House, Biradhanapalli,<br />Kuppam, Chittoor District,<br />Andhra Pradesh - 517425</p><small>Where we will gather</small></div>
             </div>
           </div>
         </div>
@@ -473,7 +474,7 @@ function App() {
         <div className="premium-location-card">
           <div className="premium-location-copy">
             <div className="premium-kicker">Find your way to us</div>
-            <h2>Come home<br /><em>to JMS House.</em></h2>
+            <h2>A place to gather<br /><em>and celebrate.</em></h2>
             <p>We would be honoured to welcome you into our home in Biradhanapalli for this intimate family celebration.</p>
             <div className="premium-address"><MapPin size={18} /><span>JMS House, Biradhanapalli,<br />Kuppam, Chittoor District,<br />Andhra Pradesh - 517425</span></div>
             <a className="premium-button" href="https://maps.app.goo.gl/miwCBvuuLGWgXiDJ9" target="_blank" rel="noreferrer">Open in Maps <ExternalLink size={15} /></a>
