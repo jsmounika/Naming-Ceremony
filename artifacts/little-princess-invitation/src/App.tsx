@@ -368,7 +368,7 @@ function App() {
       <section className="premium-hero" id="premium-home">
         <div className="premium-hero-copy premium-reveal">
           <div className="premium-kicker">With grateful hearts, we invite you</div>
-          <h1>A morning<br /><em>held in blessings.</em></h1>
+          <h1>A precious beginning<br /><em>named with love.</em></h1>
           <p className="premium-lead">Our beloved girl is ready to be surrounded by the people whose love will guide her, steady her, and celebrate every chapter ahead.</p>
           <div className="premium-meta">
             <span><CalendarDays size={15} /> Monday · 12 October 2026</span>
