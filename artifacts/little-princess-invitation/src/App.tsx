@@ -56,6 +56,11 @@ const galleryImages = [
   },
 ];
 
+const ceremonyFeatureImage = {
+  src: '/gallery/WhatsApp_Image_2026-09-08_at_4.00.05_PM_1788863690427.jpeg',
+  alt: 'Our precious baby girl surrounded by soft pink details',
+};
+
 const ceremonyTime = new Date('2026-10-12T10:00:00+05:30').getTime();
 
 function getCountdown(): Countdown | null {
@@ -128,7 +133,7 @@ function App() {
           --premium-display: 'Italiana', 'Cormorant Garamond', serif;
           --premium-sans: 'DM Sans', sans-serif;
         }
-        .premium-page { min-height: 100dvh; overflow: clip; background: var(--premium-paper); color: var(--premium-ink); font-family: var(--premium-sans); }
+        .premium-page { min-height: 100dvh; overflow: clip; background: radial-gradient(circle at 91% 22%, rgba(238,181,190,.18), transparent 26rem), var(--premium-paper); color: var(--premium-ink); font-family: var(--premium-sans); }
         .premium-page::before { position: fixed; z-index: 30; inset: 0; pointer-events: none; opacity: .18; content: ''; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 140 140' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.15'/%3E%3C/svg%3E"); mix-blend-mode: multiply; }
         .premium-page *, .premium-page *::before, .premium-page *::after { box-sizing: border-box; }
         .premium-page a { color: inherit; text-decoration: none; }
@@ -168,9 +173,9 @@ function App() {
         .premium-button:hover { background: #531c2d; transform: translateY(-3px); }
         .premium-ghost { border: 1px solid #d7b997; background: transparent; color: var(--premium-wine); }
         .premium-ghost:hover { border-color: var(--premium-wine); background: #f2e3d7; transform: translateY(-3px); }
-        .premium-hero-art { position: relative; min-height: 620px; }
-        .premium-hero-art::before { position: absolute; top: 2%; right: 4%; width: min(91%, 500px); height: 590px; border: 1px solid rgba(184,144,84,.64); border-radius: 250px 250px 26px 26px; content: ''; transform: rotate(5deg); }
-        .premium-photo-frame { position: absolute; top: 0; right: 10%; width: min(78%, 425px); height: 580px; overflow: hidden; border: 10px solid #fffaf1; border-radius: 225px 225px 24px 24px; box-shadow: 18px 22px 0 rgba(216,177,131,.35), 0 26px 70px rgba(80,35,47,.18); transform: rotate(-2deg); }
+        .premium-hero-art { position: relative; min-height: 525px; }
+        .premium-hero-art::before { position: absolute; top: 8%; right: 1%; width: min(96%, 540px); height: 395px; border: 1px solid rgba(184,144,84,.64); border-radius: 28px 28px 102px 28px; content: ''; transform: rotate(5deg); }
+        .premium-photo-frame { position: absolute; top: 0; right: 8%; width: min(90%, 520px); aspect-ratio: 1.52; height: auto; overflow: hidden; border: 10px solid #fffaf1; border-radius: 28px 28px 108px 28px; box-shadow: 18px 22px 0 rgba(216,177,131,.35), 0 26px 70px rgba(80,35,47,.18); transform: rotate(-2deg); }
         .premium-photo-frame img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s cubic-bezier(.2,.7,.2,1); }
         .premium-photo-frame:hover img { transform: scale(1.035); }
         .premium-photo-label { position: absolute; right: 0; bottom: 2%; display: grid; gap: 5px; width: 183px; padding: 18px; border: 1px solid var(--premium-gold); background: #f3e2d1; color: var(--premium-wine); box-shadow: 0 15px 35px rgba(74,37,44,.11); transform: rotate(3deg); }
@@ -195,7 +200,7 @@ function App() {
         .premium-story-grid { display: grid; grid-template-columns: .86fr 1.14fr; gap: clamp(38px, 8vw, 126px); align-items: center; }
         .premium-story-photo { position: relative; padding: 0 0 26px 26px; }
         .premium-story-photo::before { position: absolute; inset: 28px 26px 0 0; border: 1px solid var(--premium-gold); content: ''; }
-        .premium-story-photo img { position: relative; display: block; width: 100%; aspect-ratio: .8; border-radius: 180px 180px 18px 18px; object-fit: cover; }
+        .premium-story-photo img { position: relative; display: block; width: 100%; aspect-ratio: 1.42; border-radius: 28px 150px 22px 22px; object-fit: cover; }
         .premium-story-copy blockquote { margin: 0; color: var(--premium-wine); font-family: var(--premium-serif); font-size: clamp(32px, 3.7vw, 55px); line-height: .99; }
         .premium-story-copy blockquote::before { display: block; margin-bottom: 8px; color: var(--premium-gold); content: '“'; font-family: var(--premium-display); font-size: 79px; line-height: .35; }
         .premium-story-copy p { max-width: 530px; margin: 28px 0 0; color: #795f63; line-height: 1.85; }
@@ -297,9 +302,9 @@ function App() {
           .premium-hero { padding: 64px 21px 82px; }
           .premium-hero h1 { font-size: clamp(65px, 20vw, 96px); }
           .premium-lead { font-size: 22px; }
-          .premium-hero-art { min-height: 445px; margin-top: 12px; }
-          .premium-hero-art::before { height: 430px; }
-          .premium-photo-frame { right: 7%; width: 75%; height: 430px; }
+          .premium-hero-art { min-height: 375px; margin-top: 12px; }
+          .premium-hero-art::before { top: 8%; right: -2%; width: 96%; height: 260px; border-radius: 22px 22px 72px 22px; }
+          .premium-photo-frame { right: 4%; width: 92%; aspect-ratio: 1.42; height: auto; border-radius: 22px 22px 78px 22px; }
           .premium-photo-label { width: 150px; padding: 14px; }
           .premium-photo-label strong { font-size: 23px; }
           .premium-hero-flower { left: -8%; width: 64px; height: 64px; }
@@ -379,10 +384,10 @@ function App() {
             <button className="premium-ghost" type="button" onClick={() => jumpTo('premium-gallery')}>Enter her album <ImageIcon size={15} /></button>
           </div>
         </div>
-        <div className="premium-hero-art premium-reveal" aria-label="A portrait of our precious baby girl with her parents">
+        <div className="premium-hero-art premium-reveal" aria-label="A portrait of our precious baby girl surrounded by pink details">
           <FloralMark className="premium-hero-flower" />
           <div className="premium-photo-frame">
-            <img src={galleryImages[0].src} alt={galleryImages[0].alt} />
+            <img src={ceremonyFeatureImage.src} alt={ceremonyFeatureImage.alt} />
           </div>
           <div className="premium-photo-label">
             <span>The guest of honour</span>
@@ -398,7 +403,7 @@ function App() {
         </div>
         <div className="premium-story-grid">
           <div className="premium-story-photo">
-            <img src={galleryImages[1].src} alt={galleryImages[1].alt} loading="lazy" />
+            <img src={ceremonyFeatureImage.src} alt={ceremonyFeatureImage.alt} loading="lazy" />
           </div>
           <div className="premium-story-copy">
             <blockquote>She has made our world softer, brighter, and wonderfully full.</blockquote>
