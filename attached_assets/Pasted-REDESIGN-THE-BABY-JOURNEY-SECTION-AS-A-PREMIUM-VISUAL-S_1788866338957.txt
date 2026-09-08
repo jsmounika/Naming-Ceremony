@@ -1,0 +1,283 @@
+REDESIGN THE "BABY JOURNEY" SECTION AS A PREMIUM
+VISUAL STORYTELLING EXPERIENCE.
+
+==================================================
+IMPORTANT CHARACTER CONSISTENCY
+==================================================
+
+Create one consistent cute baby girl character and use the
+same character throughout all five scenes.
+
+Character details:
+
+- Cute Indian baby girl
+- Soft adorable facial features
+- Warm expressive eyes
+- Single small maroon sticker bindi
+- Gold bangles
+- Tiny gold anklets
+- Cute elegant traditional baby outfit
+- Soft premium animated illustration appearance
+- Happy, curious and expressive personality
+
+IMPORTANT:
+
+The same baby character must remain visually consistent
+throughout all five scenes.
+
+Do not change her face, hairstyle, proportions or overall
+character identity between scenes.
+
+==================================================
+OVERALL VISUAL STYLE
+==================================================
+
+Create a premium animated illustration style.
+
+Style:
+
+- Elegant
+- Emotional
+- Magical
+- Soft cinematic lighting
+- Warm pastel colors
+- Pink
+- Peach
+- Cream
+- Lavender
+- Subtle gold details
+
+Include:
+
+- Flowers
+- Gentle sparkles
+- Soft glowing light
+- Elegant Indian traditional decorative elements
+
+Do not create a cheap cartoon appearance.
+
+Do not make the animation overly childish.
+
+The overall experience should feel premium and cinematic.
+
+==================================================
+SCENE 1 - A TINY MIRACLE
+==================================================
+
+Website text:
+
+"A tiny little miracle entered our lives... 👶💖"
+
+Visual:
+
+Show the cute baby girl sitting comfortably on a soft,
+beautiful cloud.
+
+Surround her with:
+
+- Soft pink flowers
+- Tiny magical sparkles
+- Soft clouds
+- Small butterflies
+
+The baby should look curious and happy.
+
+Animation:
+
+- Baby gently blinks
+- Baby makes a small hand wave
+- Clouds slowly move
+- Flowers gently float
+- Sparkles softly appear
+
+Use smooth scroll-triggered animation.
+
+==================================================
+SCENE 2 - A BEAUTIFUL WORLD
+==================================================
+
+Website text:
+
+"And suddenly, our world became more beautiful... 🌸"
+
+Visual:
+
+Show the same baby girl in a magical pastel flower garden.
+
+Include:
+
+- Large colorful flowers
+- Soft green leaves
+- Butterflies
+- Sparkles
+- Warm magical lighting
+
+The baby should reach gently toward a butterfly with a
+curious and happy expression.
+
+Animation:
+
+- Butterfly gently flies
+- Baby reaches with her hand
+- Flowers move subtly
+- Sparkles gently appear
+
+==================================================
+SCENE 3 - ENDLESS LOVE
+==================================================
+
+Website text:
+
+"She filled our hearts with endless love, laughter,
+and beautiful memories. 💕"
+
+Visual:
+
+Create a large elegant glowing heart made from:
+
+- Beautiful flowers
+- Soft pink light
+- Sparkles
+
+Show the same baby girl sitting happily in front of
+or inside the floral heart.
+
+Display elegantly:
+
+"S Udhay Kiran ❤️ J S Mounika"
+
+Animation:
+
+- Floral heart gently glows
+- Sparkles float upward
+- Flowers move gently
+- Baby smiles happily
+- Baby makes a cute gentle clapping movement
+
+==================================================
+SCENE 4 - A BEAUTIFUL BEGINNING
+==================================================
+
+Website text:
+
+"And now...
+it's time for another beautiful beginning! ✨"
+
+Visual:
+
+Show the same baby girl standing excitedly beside
+a magical pathway.
+
+The pathway should lead toward a beautiful traditional
+Indian celebration area visible in the distance.
+
+Include:
+
+- Floral arches
+- Soft fairy lights
+- Flower decorations
+- Floating petals
+- Warm glowing atmosphere
+
+The baby should point excitedly toward the celebration area.
+
+Animation:
+
+- Baby gently points
+- Sparkles travel along the pathway
+- Fairy lights softly glow
+- Flower petals gently float
+
+The scene should create anticipation and excitement.
+
+==================================================
+SCENE 5 - THE CELEBRATION
+==================================================
+
+Website text:
+
+"Join us as we celebrate
+our Little Princess's
+Naming Ceremony 🌸"
+
+Visual:
+
+Show the same baby girl happily standing in front of
+a beautiful traditional Indian floral arch.
+
+Include:
+
+- Sunflowers
+- Roses
+- Pink flowers
+- Elegant green leaves
+- Subtle gold decorations
+- Warm celebration lighting
+
+The baby should have both hands open in a welcoming pose,
+as if inviting family and friends.
+
+Animation:
+
+- Baby gently waves
+- Flowers move subtly
+- Sparkles softly appear
+- Flower petals gently fall
+
+==================================================
+SCROLL EXPERIENCE
+==================================================
+
+Each scene should naturally appear as the visitor scrolls.
+
+Use:
+
+- Fade-in
+- Gentle upward movement
+- Parallax effects
+- Smooth transitions
+
+Do NOT require visitors to click buttons to move between scenes.
+
+Visitors should simply scroll or swipe to continue the story.
+
+After Scene 5, smoothly transition into:
+
+"Ceremony Details"
+
+Use the floral decorations from Scene 5 as a visual bridge
+into the Ceremony Details section.
+
+==================================================
+PERFORMANCE
+==================================================
+
+This website will primarily be viewed on mobile phones.
+
+Prioritize:
+
+- Fast loading
+- Lightweight animations
+- Smooth scrolling
+- Optimized images
+- No large video files
+
+Use CSS and lightweight JavaScript animations where possible.
+
+Respect reduced-motion accessibility preferences.
+
+==================================================
+IMPORTANT PRIVACY
+==================================================
+
+Do NOT reveal the baby's name anywhere.
+
+Do NOT create a name reveal.
+
+Do NOT create a placeholder for the baby's name.
+
+Always refer to her only as:
+
+"Our Little Princess"
+"Our Little Angel"
+"Our Precious Baby Girl"

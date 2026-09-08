@@ -81,7 +81,7 @@ const journeyScenes = [
     id: 3,
     label: 'A home full of love',
     lines: ['She filled our hearts with', 'endless love, laughter,', 'and beautiful memories.'],
-    signature: 'S Udhay Kiran  ·  J S Mounika',
+    signature: true,
   },
   {
     id: 4,
@@ -127,11 +127,28 @@ function JourneyIllustration({ scene }: { scene: number }) {
       <span className="journey-orbit journey-orbit-one" />
       <span className="journey-orbit journey-orbit-two" />
       <span className="journey-glow" />
-      <span className="journey-moon" />
-      <span className="journey-cradle">
-        <span className="journey-baby-head" />
-        <span className="journey-baby-wrap" />
+      <span className="journey-cloud journey-cloud-one" />
+      <span className="journey-cloud journey-cloud-two" />
+      <span className="journey-garden" />
+      <span className="journey-floral-heart" />
+      <span className="journey-arch" />
+      <span className="journey-path" />
+      <span className="journey-character">
+        <span className="journey-character-hair" />
+        <span className="journey-character-face" />
+        <span className="journey-character-bindi" />
+        <span className="journey-character-body" />
+        <span className="journey-character-arm journey-character-arm-one" />
+        <span className="journey-character-arm journey-character-arm-two" />
+        <span className="journey-character-leg journey-character-leg-one" />
+        <span className="journey-character-leg journey-character-leg-two" />
+        <span className="journey-bangle journey-bangle-one" />
+        <span className="journey-bangle journey-bangle-two" />
+        <span className="journey-anklet journey-anklet-one" />
+        <span className="journey-anklet journey-anklet-two" />
       </span>
+      <span className="journey-butterfly journey-butterfly-one" />
+      <span className="journey-butterfly journey-butterfly-two" />
       <Flower2 className="journey-flower journey-flower-one" size={30} strokeWidth={1.2} />
       <Flower2 className="journey-flower journey-flower-two" size={22} strokeWidth={1.2} />
       <Sparkles className="journey-sparkle journey-sparkle-one" size={24} strokeWidth={1.1} />
@@ -288,31 +305,89 @@ function App() {
         .journey-scene-copy { display: flex; max-width: 470px; flex-direction: column; align-items: flex-start; }
         .journey-scene-copy h3 { margin: 16px 0 0; color: var(--premium-wine); font-family: var(--premium-serif); font-size: clamp(35px, 4.2vw, 63px); font-weight: 500; letter-spacing: -.035em; line-height: .98; }
         .journey-scene-copy h3 span { display: block; }
-        .journey-scene-signature { margin-top: 26px; color: var(--premium-rose); font-family: var(--premium-serif); font-size: 25px; }
+        .journey-scene-signature { display: flex; align-items: center; gap: 10px; margin-top: 26px; color: var(--premium-rose); font-family: var(--premium-serif); font-size: 25px; }
+        .journey-scene-signature svg { color: var(--premium-gold); }
         .journey-scene-copy .premium-button { margin-top: 28px; }
         .journey-illustration { position: relative; width: min(100%, 380px); aspect-ratio: 1; isolation: isolate; color: var(--premium-gold); }
         .journey-orbit { position: absolute; inset: 12% 1%; border: 1px solid rgba(184,144,84,.2); border-radius: 50%; transform: rotate(24deg); }
         .journey-orbit-two { inset: 1% 12%; transform: rotate(-30deg); }
-        .journey-glow { position: absolute; top: 20%; left: 50%; width: 210px; height: 210px; border-radius: 50%; background: radial-gradient(circle, rgba(246,204,204,.75), rgba(246,204,204,.08) 68%, transparent 70%); transform: translateX(-50%); }
-        .journey-moon { position: absolute; top: 23%; left: 50%; width: 165px; height: 165px; border: 1px solid rgba(184,144,84,.75); border-radius: 50%; background: linear-gradient(135deg, #f9e8df, #e5b8bd); box-shadow: 0 22px 45px rgba(111,41,59,.12); transform: translateX(-50%); }
-        .journey-moon::after { position: absolute; top: 13px; right: -18px; width: 155px; height: 155px; border-radius: 50%; background: var(--premium-paper); content: ''; }
-        .journey-cradle { position: absolute; bottom: 23%; left: 50%; width: 220px; height: 105px; border: 2px solid rgba(111,41,59,.58); border-top: 0; border-radius: 0 0 130px 130px; background: linear-gradient(145deg, rgba(255,247,239,.95), rgba(244,210,211,.94)); box-shadow: 0 17px 0 rgba(216,177,131,.35); transform: translateX(-50%) rotate(-4deg); }
-        .journey-cradle::before, .journey-cradle::after { position: absolute; bottom: -27px; width: 1px; height: 30px; background: var(--premium-gold); content: ''; }
-        .journey-cradle::before { left: 31px; transform: rotate(18deg); }
-        .journey-cradle::after { right: 31px; transform: rotate(-18deg); }
-        .journey-baby-head { position: absolute; top: 17px; left: 50%; width: 45px; height: 45px; border: 1px solid rgba(111,41,59,.35); border-radius: 50%; background: #f2c7b7; transform: translateX(-50%); }
-        .journey-baby-head::after { position: absolute; top: 8px; left: 7px; width: 29px; height: 12px; border-radius: 50% 50% 0 0; background: #7d5960; content: ''; transform: rotate(-8deg); }
-        .journey-baby-wrap { position: absolute; bottom: 12px; left: 50%; width: 116px; height: 52px; border-radius: 55% 55% 30% 30%; background: #e9b3bc; transform: translateX(-50%) rotate(-5deg); }
-        .journey-flower, .journey-sparkle, .journey-heart { position: absolute; z-index: 2; color: var(--premium-gold); }
+        .journey-glow { position: absolute; top: 20%; left: 50%; width: 235px; height: 235px; border-radius: 50%; background: radial-gradient(circle, rgba(246,204,204,.75), rgba(246,204,204,.08) 68%, transparent 70%); transform: translateX(-50%); }
+        .journey-cloud { position: absolute; z-index: 3; width: 178px; height: 48px; border: 1px solid rgba(184,144,84,.32); border-radius: 50px; background: linear-gradient(180deg, rgba(255,250,246,.96), rgba(244,221,225,.82)); box-shadow: 0 14px 22px rgba(111,41,59,.1); opacity: 0; }
+        .journey-cloud::before, .journey-cloud::after { position: absolute; border: 1px solid rgba(184,144,84,.25); border-radius: 50%; background: inherit; content: ''; }
+        .journey-cloud::before { bottom: 11px; left: 26px; width: 64px; height: 64px; }
+        .journey-cloud::after { right: 24px; bottom: 8px; width: 51px; height: 51px; }
+        .journey-cloud-one { bottom: 23%; left: 5%; animation: journey-cloud-drift 6s ease-in-out infinite; }
+        .journey-cloud-two { right: 3%; bottom: 32%; width: 124px; transform: scale(.72); animation: journey-cloud-drift 7s ease-in-out -1.4s infinite reverse; }
+        .journey-garden { position: absolute; z-index: 2; right: 8%; bottom: 13%; left: 8%; height: 78px; border: 1px solid rgba(105,130,111,.28); border-radius: 50% 50% 15px 15px; background: linear-gradient(145deg, rgba(238,220,216,.78), rgba(203,213,187,.72)); opacity: 0; }
+        .journey-garden::before, .journey-garden::after { position: absolute; bottom: 20px; width: 50px; height: 50px; border: 5px dotted rgba(181,122,112,.52); border-radius: 50%; content: ''; }
+        .journey-garden::before { left: 15%; }
+        .journey-garden::after { right: 13%; width: 38px; height: 38px; }
+        .journey-floral-heart { position: absolute; z-index: 2; top: 20%; left: 50%; width: 190px; height: 170px; border: 3px solid rgba(181,122,112,.42); border-radius: 52% 48% 48% 52%; background: radial-gradient(circle at 26% 35%, #efaeb7 0 12%, transparent 13%), radial-gradient(circle at 74% 35%, #dfb3c1 0 12%, transparent 13%), radial-gradient(circle at 50% 72%, #f2c8b6 0 14%, transparent 15%), rgba(245,211,213,.3); box-shadow: 0 0 35px rgba(238,177,192,.62); opacity: 0; transform: translateX(-50%) rotate(-45deg); }
+        .journey-floral-heart::before, .journey-floral-heart::after { position: absolute; width: 34px; height: 34px; border: 1px solid rgba(184,144,84,.7); border-radius: 50%; content: ''; }
+        .journey-floral-heart::before { top: 12px; left: 22px; }
+        .journey-floral-heart::after { right: 20px; bottom: 17px; }
+        .journey-arch { position: absolute; z-index: 2; bottom: 14%; left: 50%; width: 252px; height: 220px; border: 2px solid rgba(184,144,84,.7); border-bottom: 0; border-radius: 130px 130px 0 0; opacity: 0; transform: translateX(-50%); }
+        .journey-arch::before, .journey-arch::after { position: absolute; top: -18px; width: 32px; height: 32px; border: 6px dotted rgba(181,122,112,.72); border-radius: 50%; content: ''; }
+        .journey-arch::before { left: 17px; }
+        .journey-arch::after { right: 17px; }
+        .journey-path { position: absolute; z-index: 1; bottom: 0; left: 50%; width: 170px; height: 175px; background: linear-gradient(180deg, rgba(248,222,202,.1), rgba(235,195,180,.78)); clip-path: polygon(36% 0, 64% 0, 100% 100%, 0 100%); opacity: 0; transform: translateX(-50%); }
+        .journey-path::after { position: absolute; top: 20%; left: 50%; width: 8px; height: 8px; border-radius: 50%; background: var(--premium-gold); box-shadow: 0 40px 0 rgba(184,144,84,.65), 0 80px 0 rgba(184,144,84,.4); content: ''; animation: journey-path-glow 3s ease-in-out infinite; }
+        .journey-character { position: absolute; z-index: 5; bottom: 18%; left: 50%; width: 138px; height: 190px; animation: journey-baby-breathe 4.8s ease-in-out infinite; transform: translateX(-50%); }
+        .journey-character-hair { position: absolute; top: 0; left: 50%; width: 82px; height: 66px; border-radius: 55% 58% 34% 42%; background: #6b4650; box-shadow: inset 11px 6px 0 rgba(255,255,255,.08); transform: translateX(-50%) rotate(-5deg); }
+        .journey-character-face { position: absolute; z-index: 2; top: 14px; left: 50%; width: 67px; height: 70px; border: 1px solid rgba(111,41,59,.28); border-radius: 47% 47% 45% 45%; background: #f2c7b7; transform: translateX(-50%); }
+        .journey-character-face::before { position: absolute; top: 31px; left: 20px; width: 5px; height: 7px; border-radius: 50%; background: #62434c; box-shadow: 21px 0 0 #62434c; content: ''; animation: journey-blink 5.5s ease-in-out infinite; }
+        .journey-character-face::after { position: absolute; bottom: 15px; left: 29px; width: 10px; height: 5px; border-bottom: 1px solid #a95568; border-radius: 50%; content: ''; }
+        .journey-character-bindi { position: absolute; z-index: 4; top: 32px; left: 50%; width: 5px; height: 5px; border-radius: 50%; background: #721f35; transform: translateX(-50%); }
+        .journey-character-body { position: absolute; bottom: 30px; left: 50%; width: 98px; height: 95px; border: 1px solid rgba(111,41,59,.24); border-radius: 52% 52% 31% 31%; background: linear-gradient(135deg, #f3c5c9, #e9aab8); box-shadow: inset 0 10px 0 rgba(255,250,246,.35); transform: translateX(-50%); }
+        .journey-character-body::after { position: absolute; top: 23px; left: 50%; width: 30px; height: 10px; border: 1px solid rgba(184,144,84,.52); border-radius: 50%; content: ''; transform: translateX(-50%); }
+        .journey-character-arm { position: absolute; z-index: 3; top: 89px; width: 55px; height: 18px; border: 1px solid rgba(111,41,59,.2); border-radius: 20px; background: #f2c7b7; transform-origin: 10% 50%; }
+        .journey-character-arm-one { left: 13px; transform: rotate(22deg); }
+        .journey-character-arm-two { right: 13px; transform: rotate(-22deg); transform-origin: 90% 50%; }
+        .journey-character-leg { position: absolute; bottom: 5px; width: 24px; height: 46px; border: 1px solid rgba(111,41,59,.2); border-radius: 18px 18px 10px 10px; background: #f2c7b7; }
+        .journey-character-leg-one { left: 38px; }
+        .journey-character-leg-two { right: 38px; }
+        .journey-bangle { position: absolute; z-index: 4; top: 91px; width: 14px; height: 7px; border: 2px solid var(--premium-gold); border-radius: 50%; }
+        .journey-bangle-one { left: 11px; transform: rotate(22deg); }
+        .journey-bangle-two { right: 11px; transform: rotate(-22deg); }
+        .journey-anklet { position: absolute; bottom: 12px; width: 21px; height: 5px; border-bottom: 2px solid var(--premium-gold); border-radius: 50%; }
+        .journey-anklet-one { left: 39px; }
+        .journey-anklet-two { right: 39px; }
+        .journey-butterfly { position: absolute; z-index: 4; width: 10px; height: 10px; border: 1px solid var(--premium-rose); border-radius: 50% 0 50% 0; opacity: 0; transform: rotate(45deg); }
+        .journey-butterfly::after { position: absolute; top: -3px; left: 7px; width: 10px; height: 10px; border: 1px solid var(--premium-rose); border-radius: 0 50% 0 50%; content: ''; }
+        .journey-butterfly-one { top: 28%; right: 13%; animation: journey-butterfly-drift 6s ease-in-out infinite; }
+        .journey-butterfly-two { bottom: 24%; left: 12%; transform: scale(.72) rotate(45deg); animation: journey-butterfly-drift 7s ease-in-out -1.8s infinite reverse; }
+        .journey-flower, .journey-sparkle, .journey-heart { position: absolute; z-index: 6; color: var(--premium-gold); }
         .journey-flower-one { top: 12%; left: 12%; color: var(--premium-rose); animation: journey-float 5.2s ease-in-out infinite; }
         .journey-flower-two { right: 13%; bottom: 16%; color: var(--premium-gold); animation: journey-float 4.4s ease-in-out .6s infinite; }
         .journey-sparkle-one { top: 9%; right: 18%; color: #d5a276; animation: journey-twinkle 3s ease-in-out infinite; }
         .journey-sparkle-two { bottom: 14%; left: 18%; color: var(--premium-rose); animation: journey-twinkle 3.8s ease-in-out .4s infinite; }
         .journey-heart { right: 25%; top: 31%; color: var(--premium-rose); animation: journey-twinkle 4.5s ease-in-out .8s infinite; }
+        .journey-illustration-1 .journey-cloud { opacity: 1; }
+        .journey-illustration-1 .journey-character { bottom: 27%; transform: translateX(-50%) scale(.9); }
+        .journey-illustration-1 .journey-butterfly { opacity: .85; }
         .journey-illustration-2 { transform: rotate(3deg); }
+        .journey-illustration-2 .journey-garden { opacity: 1; }
+        .journey-illustration-2 .journey-butterfly { opacity: .95; }
+        .journey-illustration-2 .journey-character-arm-two { transform: rotate(-48deg); }
         .journey-illustration-3 { transform: rotate(-2deg); }
+        .journey-illustration-3 .journey-floral-heart { opacity: 1; animation: journey-heart-glow 4.5s ease-in-out infinite; }
+        .journey-illustration-3 .journey-character { bottom: 28%; transform: translateX(-50%) scale(.88); }
+        .journey-illustration-3 .journey-character-arm-one { transform: rotate(-35deg); }
+        .journey-illustration-3 .journey-character-arm-two { transform: rotate(35deg); }
         .journey-illustration-4 .journey-glow { background: radial-gradient(circle, rgba(232,188,202,.82), rgba(232,188,202,.08) 68%, transparent 70%); }
-        .journey-illustration-5 .journey-moon { background: linear-gradient(135deg, #f5ddd3, #d7a8ae); }
+        .journey-illustration-4 .journey-arch, .journey-illustration-4 .journey-path { opacity: 1; }
+        .journey-illustration-4 .journey-character { left: 34%; bottom: 17%; }
+        .journey-illustration-4 .journey-character-arm-two { transform: rotate(-55deg); }
+        .journey-illustration-5 .journey-arch, .journey-illustration-5 .journey-path { opacity: 1; }
+        .journey-illustration-5 .journey-character { bottom: 17%; }
+        .journey-illustration-5 .journey-character-arm-one { transform: rotate(-38deg); }
+        .journey-illustration-5 .journey-character-arm-two { transform: rotate(38deg); }
+        @keyframes journey-baby-breathe { 0%, 100% { translate: 0 0; } 50% { translate: 0 -5px; } }
+        @keyframes journey-blink { 0%, 42%, 48%, 100% { transform: scaleY(1); } 45% { transform: scaleY(.12); } }
+        @keyframes journey-cloud-drift { 0%, 100% { translate: 0 0; } 50% { translate: 12px -6px; } }
+        @keyframes journey-butterfly-drift { 0%, 100% { translate: 0 0; rotate: -6deg; } 50% { translate: 18px -18px; rotate: 8deg; } }
+        @keyframes journey-heart-glow { 0%, 100% { opacity: .72; filter: drop-shadow(0 0 0 rgba(238,177,192,0)); } 50% { opacity: 1; filter: drop-shadow(0 0 18px rgba(238,177,192,.8)); } }
+        @keyframes journey-path-glow { 0%, 100% { opacity: .45; translate: 0 0; } 50% { opacity: 1; translate: 0 18px; } }
         @keyframes journey-float { 0%, 100% { transform: translateY(0) rotate(0); } 50% { transform: translateY(-9px) rotate(5deg); } }
         @keyframes journey-twinkle { 0%, 100% { opacity: .5; transform: scale(.9) rotate(0); } 50% { opacity: 1; transform: scale(1.12) rotate(10deg); } }
         .premium-section { max-width: 1300px; margin: 0 auto; padding: clamp(105px, 13vw, 190px) clamp(24px, 6.5vw, 82px); }
@@ -567,11 +642,12 @@ function App() {
                     <span key={line}>{line}</span>
                   ))}
                 </h3>
-                {scene.signature && <div className="journey-scene-signature">{scene.signature}</div>}
-                {scene.id === 5 && (
-                  <button className="premium-button" type="button" onClick={() => jumpTo('premium-details')}>
-                    Continue to the ceremony <ChevronDown size={15} />
-                  </button>
+                {scene.signature && (
+                  <div className="journey-scene-signature">
+                    <span>S Udhay Kiran</span>
+                    <Heart size={15} strokeWidth={1.3} />
+                    <span>J S Mounika</span>
+                  </div>
                 )}
               </div>
             </article>
