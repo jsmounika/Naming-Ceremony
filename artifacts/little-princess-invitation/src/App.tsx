@@ -61,6 +61,11 @@ const ceremonyFeatureImage = {
   alt: 'Our precious baby girl surrounded by soft pink details',
 };
 
+const parentsNoteImage = {
+  src: '/gallery/WhatsApp_Image_2026-09-08_at_3.33.49_PM_(1)_1788864230977.jpeg',
+  alt: 'Our little family sharing a tender moment together',
+};
+
 const ceremonyTime = new Date('2026-10-12T10:00:00+05:30').getTime();
 
 function getCountdown(): Countdown | null {
@@ -405,7 +410,7 @@ function App() {
         </div>
         <div className="premium-story-grid">
           <div className="premium-story-photo">
-            <img src={ceremonyFeatureImage.src} alt={ceremonyFeatureImage.alt} loading="lazy" />
+            <img src={parentsNoteImage.src} alt={parentsNoteImage.alt} loading="lazy" />
           </div>
           <div className="premium-story-copy">
             <blockquote>She has made our world softer, brighter, and wonderfully full.</blockquote>
