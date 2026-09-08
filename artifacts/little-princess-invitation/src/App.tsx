@@ -66,6 +66,35 @@ const parentsNoteImage = {
   alt: 'Our little family sharing a tender moment together',
 };
 
+const journeyScenes = [
+  {
+    id: 1,
+    label: 'A small beginning',
+    lines: ['A tiny little miracle', 'entered our lives...'],
+  },
+  {
+    id: 2,
+    label: 'The world, made softer',
+    lines: ['And suddenly,', 'our world became more beautiful...'],
+  },
+  {
+    id: 3,
+    label: 'A home full of love',
+    lines: ['She filled our hearts with', 'endless love, laughter,', 'and beautiful memories.'],
+    signature: 'S Udhay Kiran  ·  J S Mounika',
+  },
+  {
+    id: 4,
+    label: 'A beautiful anticipation',
+    lines: ['And now...', 'it is time for another', 'beautiful beginning.'],
+  },
+  {
+    id: 5,
+    label: 'The celebration ahead',
+    lines: ['Join us as we celebrate', 'our Little Princess’s', 'Naming Ceremony.'],
+  },
+];
+
 const ceremonyTime = new Date('2026-10-12T10:00:00+05:30').getTime();
 
 function getCountdown(): Countdown | null {
@@ -92,10 +121,31 @@ function FloralMark({ className = '' }: { className?: string }) {
   );
 }
 
+function JourneyIllustration({ scene }: { scene: number }) {
+  return (
+    <div className={`journey-illustration journey-illustration-${scene}`} aria-hidden="true">
+      <span className="journey-orbit journey-orbit-one" />
+      <span className="journey-orbit journey-orbit-two" />
+      <span className="journey-glow" />
+      <span className="journey-moon" />
+      <span className="journey-cradle">
+        <span className="journey-baby-head" />
+        <span className="journey-baby-wrap" />
+      </span>
+      <Flower2 className="journey-flower journey-flower-one" size={30} strokeWidth={1.2} />
+      <Flower2 className="journey-flower journey-flower-two" size={22} strokeWidth={1.2} />
+      <Sparkles className="journey-sparkle journey-sparkle-one" size={24} strokeWidth={1.1} />
+      <Sparkles className="journey-sparkle journey-sparkle-two" size={17} strokeWidth={1.1} />
+      <Heart className="journey-heart" size={20} strokeWidth={1.2} />
+    </div>
+  );
+}
+
 function App() {
   const [countdown, setCountdown] = useState<Countdown | null>(getCountdown);
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeImage, setActiveImage] = useState<number | null>(null);
+  const [journeyVisible, setJourneyVisible] = useState<Record<number, boolean>>({});
 
   useEffect(() => {
     const interval = window.setInterval(() => setCountdown(getCountdown()), 1000);
@@ -116,6 +166,33 @@ function App() {
       document.body.style.overflow = '';
     };
   }, [activeImage]);
+
+  useEffect(() => {
+    const scenes = Array.from(document.querySelectorAll<HTMLElement>('[data-journey-scene]'));
+    if (!('IntersectionObserver' in window)) {
+      setJourneyVisible(Object.fromEntries(scenes.map((scene) => [Number(scene.dataset.journeyScene), true])));
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        setJourneyVisible((current) => {
+          const next = { ...current };
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const sceneId = Number((entry.target as HTMLElement).dataset.journeyScene);
+              next[sceneId] = true;
+            }
+          });
+          return next;
+        });
+      },
+      { threshold: 0.24, rootMargin: '0px 0px -8% 0px' },
+    );
+
+    scenes.forEach((scene) => observer.observe(scene));
+    return () => observer.disconnect();
+  }, []);
 
   const jumpTo = (id: string) => {
     setMenuOpen(false);
@@ -196,6 +273,48 @@ function App() {
         .floral-mark i:nth-child(4) { bottom: 19px; left: 3px; transform: rotate(215deg); }
         .floral-mark b { top: 31px; left: 31px; width: 16px; height: 16px; border-radius: 50%; background: currentColor; }
         .premium-hero-flower { top: 2%; left: 3%; transform: rotate(-16deg); }
+        .baby-journey { position: relative; max-width: 1200px; }
+        .journey-heading { max-width: 720px; margin-right: auto; margin-left: auto; text-align: center; }
+        .journey-heading .premium-kicker { justify-content: center; }
+        .journey-heading p { max-width: 560px; margin: 23px auto 0; color: #765e62; font-family: var(--premium-serif); font-size: 21px; line-height: 1.35; }
+        .journey-track { position: relative; display: grid; gap: 30px; margin-top: 70px; }
+        .journey-track::before { position: absolute; top: 25px; bottom: 25px; left: 50%; width: 1px; background: linear-gradient(to bottom, transparent, rgba(184,144,84,.65) 10%, rgba(184,144,84,.65) 90%, transparent); content: ''; }
+        .journey-scene { position: relative; display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: clamp(34px, 7vw, 104px); align-items: center; min-height: 390px; opacity: 0; transform: translateY(30px); transition: opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1); }
+        .journey-scene.is-visible { opacity: 1; transform: translateY(0); }
+        .journey-scene:nth-child(even) .journey-scene-art { order: 2; }
+        .journey-scene:nth-child(even) .journey-scene-copy { order: 1; align-items: flex-end; text-align: right; }
+        .journey-scene-number { position: absolute; top: 50%; left: 50%; display: grid; width: 50px; height: 50px; place-items: center; border: 1px solid rgba(184,144,84,.75); border-radius: 50%; background: var(--premium-paper); color: var(--premium-gold); font-family: var(--premium-serif); font-size: 18px; transform: translate(-50%, -50%); }
+        .journey-scene-art { display: grid; min-height: 350px; place-items: center; }
+        .journey-scene-copy { display: flex; max-width: 470px; flex-direction: column; align-items: flex-start; }
+        .journey-scene-copy h3 { margin: 16px 0 0; color: var(--premium-wine); font-family: var(--premium-serif); font-size: clamp(35px, 4.2vw, 63px); font-weight: 500; letter-spacing: -.035em; line-height: .98; }
+        .journey-scene-copy h3 span { display: block; }
+        .journey-scene-signature { margin-top: 26px; color: var(--premium-rose); font-family: var(--premium-serif); font-size: 25px; }
+        .journey-scene-copy .premium-button { margin-top: 28px; }
+        .journey-illustration { position: relative; width: min(100%, 380px); aspect-ratio: 1; isolation: isolate; color: var(--premium-gold); }
+        .journey-orbit { position: absolute; inset: 12% 1%; border: 1px solid rgba(184,144,84,.2); border-radius: 50%; transform: rotate(24deg); }
+        .journey-orbit-two { inset: 1% 12%; transform: rotate(-30deg); }
+        .journey-glow { position: absolute; top: 20%; left: 50%; width: 210px; height: 210px; border-radius: 50%; background: radial-gradient(circle, rgba(246,204,204,.75), rgba(246,204,204,.08) 68%, transparent 70%); transform: translateX(-50%); }
+        .journey-moon { position: absolute; top: 23%; left: 50%; width: 165px; height: 165px; border: 1px solid rgba(184,144,84,.75); border-radius: 50%; background: linear-gradient(135deg, #f9e8df, #e5b8bd); box-shadow: 0 22px 45px rgba(111,41,59,.12); transform: translateX(-50%); }
+        .journey-moon::after { position: absolute; top: 13px; right: -18px; width: 155px; height: 155px; border-radius: 50%; background: var(--premium-paper); content: ''; }
+        .journey-cradle { position: absolute; bottom: 23%; left: 50%; width: 220px; height: 105px; border: 2px solid rgba(111,41,59,.58); border-top: 0; border-radius: 0 0 130px 130px; background: linear-gradient(145deg, rgba(255,247,239,.95), rgba(244,210,211,.94)); box-shadow: 0 17px 0 rgba(216,177,131,.35); transform: translateX(-50%) rotate(-4deg); }
+        .journey-cradle::before, .journey-cradle::after { position: absolute; bottom: -27px; width: 1px; height: 30px; background: var(--premium-gold); content: ''; }
+        .journey-cradle::before { left: 31px; transform: rotate(18deg); }
+        .journey-cradle::after { right: 31px; transform: rotate(-18deg); }
+        .journey-baby-head { position: absolute; top: 17px; left: 50%; width: 45px; height: 45px; border: 1px solid rgba(111,41,59,.35); border-radius: 50%; background: #f2c7b7; transform: translateX(-50%); }
+        .journey-baby-head::after { position: absolute; top: 8px; left: 7px; width: 29px; height: 12px; border-radius: 50% 50% 0 0; background: #7d5960; content: ''; transform: rotate(-8deg); }
+        .journey-baby-wrap { position: absolute; bottom: 12px; left: 50%; width: 116px; height: 52px; border-radius: 55% 55% 30% 30%; background: #e9b3bc; transform: translateX(-50%) rotate(-5deg); }
+        .journey-flower, .journey-sparkle, .journey-heart { position: absolute; z-index: 2; color: var(--premium-gold); }
+        .journey-flower-one { top: 12%; left: 12%; color: var(--premium-rose); animation: journey-float 5.2s ease-in-out infinite; }
+        .journey-flower-two { right: 13%; bottom: 16%; color: var(--premium-gold); animation: journey-float 4.4s ease-in-out .6s infinite; }
+        .journey-sparkle-one { top: 9%; right: 18%; color: #d5a276; animation: journey-twinkle 3s ease-in-out infinite; }
+        .journey-sparkle-two { bottom: 14%; left: 18%; color: var(--premium-rose); animation: journey-twinkle 3.8s ease-in-out .4s infinite; }
+        .journey-heart { right: 25%; top: 31%; color: var(--premium-rose); animation: journey-twinkle 4.5s ease-in-out .8s infinite; }
+        .journey-illustration-2 { transform: rotate(3deg); }
+        .journey-illustration-3 { transform: rotate(-2deg); }
+        .journey-illustration-4 .journey-glow { background: radial-gradient(circle, rgba(232,188,202,.82), rgba(232,188,202,.08) 68%, transparent 70%); }
+        .journey-illustration-5 .journey-moon { background: linear-gradient(135deg, #f5ddd3, #d7a8ae); }
+        @keyframes journey-float { 0%, 100% { transform: translateY(0) rotate(0); } 50% { transform: translateY(-9px) rotate(5deg); } }
+        @keyframes journey-twinkle { 0%, 100% { opacity: .5; transform: scale(.9) rotate(0); } 50% { opacity: 1; transform: scale(1.12) rotate(10deg); } }
         .premium-section { max-width: 1300px; margin: 0 auto; padding: clamp(105px, 13vw, 190px) clamp(24px, 6.5vw, 82px); }
         .premium-section-heading { max-width: 680px; margin-bottom: 50px; }
         .premium-section-heading h2 { margin: 16px 0 0; color: var(--premium-wine); font-family: var(--premium-display); font-size: clamp(47px, 6.8vw, 86px); font-weight: 400; letter-spacing: -.06em; line-height: .8; }
@@ -294,6 +413,13 @@ function App() {
           .premium-menu-button { display: inline-flex; }
           .premium-hero { min-height: auto; padding-top: 78px; }
           .premium-hero-art { width: 100%; max-width: 650px; min-height: 425px; margin: 24px auto 6px; }
+          .journey-track { gap: 18px; }
+          .journey-track::before { left: 36px; }
+          .journey-scene { grid-template-columns: 72px minmax(0,1fr); gap: 18px; align-items: start; min-height: 0; padding: 30px 0 42px; }
+          .journey-scene-number { top: 36px; left: 36px; width: 44px; height: 44px; }
+          .journey-scene-art, .journey-scene-copy { grid-column: 2; }
+          .journey-scene-art { order: 1 !important; min-height: 280px; }
+          .journey-scene-copy, .journey-scene:nth-child(even) .journey-scene-copy { order: 2 !important; align-items: flex-start; text-align: left; }
           .premium-details-layout { grid-template-columns: 1fr; }
           .premium-countdown { position: static; }
           .premium-location-card { grid-template-columns: 1fr; }
@@ -317,6 +443,16 @@ function App() {
           .premium-photo-label strong { font-size: 23px; }
           .premium-hero-flower { left: -8%; width: 64px; height: 64px; }
           .premium-section { padding: 100px 21px; }
+          .baby-journey { padding-top: 88px; padding-bottom: 88px; }
+          .journey-heading p { font-size: 19px; }
+          .journey-track { margin-top: 42px; }
+          .journey-scene { grid-template-columns: 38px minmax(0,1fr); gap: 12px; padding: 24px 0 38px; }
+          .journey-track::before { left: 19px; }
+          .journey-scene-number { top: 28px; left: 19px; width: 32px; height: 32px; font-size: 14px; }
+          .journey-scene-art { min-height: 230px; }
+          .journey-illustration { width: min(100%, 300px); }
+          .journey-scene-copy h3 { font-size: clamp(34px, 11vw, 48px); }
+          .journey-scene-signature { font-size: 22px; }
           .premium-story-grid { grid-template-columns: 1fr; gap: 46px; }
           .premium-story-photo { max-width: 410px; margin: 0 auto; }
           .premium-ribbon { padding: 0 21px; }
@@ -342,6 +478,7 @@ function App() {
         }
         @media (prefers-reduced-motion: reduce) {
           .premium-page *, .premium-page *::before, .premium-page *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+          .journey-scene { opacity: 1; transform: none; }
         }
       `}</style>
 
@@ -401,6 +538,44 @@ function App() {
             <button className="premium-button" type="button" onClick={() => jumpTo('premium-details')}>Read the invitation <ChevronDown size={15} /></button>
             <button className="premium-ghost" type="button" onClick={() => jumpTo('premium-gallery')}>Enter her album <ImageIcon size={15} /></button>
           </div>
+        </div>
+      </section>
+
+      <section className="premium-section baby-journey" id="premium-journey">
+        <div className="premium-section-heading journey-heading">
+          <div className="premium-kicker">A story written in love</div>
+          <h2>A Little Journey <em>of Love.</em></h2>
+          <p>Before the celebration, there was a small story unfolding one beautiful moment at a time.</p>
+        </div>
+        <div className="journey-track">
+          {journeyScenes.map((scene) => (
+            <article
+              className={`journey-scene ${journeyVisible[scene.id] ? 'is-visible' : ''}`}
+              data-journey-scene={scene.id}
+              key={scene.id}
+            >
+              <div className="journey-scene-number" aria-hidden="true">
+                {String(scene.id).padStart(2, '0')}
+              </div>
+              <div className="journey-scene-art">
+                <JourneyIllustration scene={scene.id} />
+              </div>
+              <div className="journey-scene-copy">
+                <div className="premium-kicker">{scene.label}</div>
+                <h3>
+                  {scene.lines.map((line) => (
+                    <span key={line}>{line}</span>
+                  ))}
+                </h3>
+                {scene.signature && <div className="journey-scene-signature">{scene.signature}</div>}
+                {scene.id === 5 && (
+                  <button className="premium-button" type="button" onClick={() => jumpTo('premium-details')}>
+                    Continue to the ceremony <ChevronDown size={15} />
+                  </button>
+                )}
+              </div>
+            </article>
+          ))}
         </div>
       </section>
 

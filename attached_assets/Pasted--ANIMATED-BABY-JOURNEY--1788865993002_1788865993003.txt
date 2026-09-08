@@ -1,0 +1,106 @@
+==================================================
+ANIMATED BABY JOURNEY
+==================================================
+
+Add a special storytelling section immediately after the Welcome section.
+
+Section title:
+
+"A Little Journey of Love 💖"
+
+This should be an elegant animated storytelling experience.
+
+SCENE 1:
+
+Display a cute, elegant baby-themed illustration.
+
+Text:
+
+"A tiny little miracle
+entered our lives... 👶💖"
+
+Use:
+- Soft floating flowers
+- Gentle sparkles
+- Subtle animation
+
+SCENE 2:
+
+As the visitor scrolls down, smoothly transition to:
+
+"And suddenly,
+our world became more beautiful... 🌸"
+
+Use soft animated elements and a warm emotional atmosphere.
+
+SCENE 3:
+
+Display:
+
+"She filled our hearts with
+endless love, laughter,
+and beautiful memories. 💕"
+
+Then display:
+
+"S Udhay Kiran ❤️ J S Mounika"
+
+Use an elegant and emotional design.
+
+SCENE 4:
+
+Create a feeling of excitement and anticipation.
+
+Display:
+
+"And now...
+it's time for another
+beautiful beginning! ✨"
+
+Use subtle magical sparkle animation.
+
+SCENE 5:
+
+Create a beautiful transition into the ceremony invitation.
+
+Display:
+
+"Join us as we celebrate
+our Little Princess's
+Naming Ceremony 🌸"
+
+After this scene, naturally continue scrolling
+into the Ceremony Details section.
+
+IMPORTANT:
+
+- Do not reveal the baby's name.
+- Do not create a name reveal.
+- Do not display any placeholder for the baby's name.
+
+==================================================
+ANIMATION STYLE
+==================================================
+
+The Baby Journey should NOT look like a heavy cartoon.
+
+Use:
+- Elegant illustration style
+- Premium animation
+- Soft movements
+- Floating flowers
+- Sparkles
+- Gentle fade transitions
+- Scroll-triggered animations
+
+Animations should activate as visitors scroll.
+
+Make animations smooth and lightweight,
+especially on mobile devices.
+
+Do not use large video files for this section.
+
+Prioritize fast loading and smooth performance.
+
+The Baby Journey should feel magical, emotional,
+premium and cinematic.
