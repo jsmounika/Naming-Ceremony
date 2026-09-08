@@ -1,3 +1,5 @@
+import './_group.css';
+
 import { useEffect, useState } from 'react';
 import {
   ArrowLeft,
@@ -20,37 +22,37 @@ type Countdown = { days: number; hours: number; minutes: number; seconds: number
 
 const galleryImages = [
   {
-    src: '/gallery/WhatsApp_Image_2026-09-08_at_3.33.49_PM_(1)_1788861931661.jpeg',
+    src: '/__mockup/images/WhatsApp_Image_2026-09-08_at_3.33.49_PM_(1)_1788861931661.jpeg',
     alt: 'Our precious baby girl held lovingly by her parents',
     caption: 'Held in love',
   },
   {
-    src: '/gallery/WhatsApp_Image_2026-09-08_at_3.33.49_PM_1788861931661.jpeg',
+    src: '/__mockup/images/WhatsApp_Image_2026-09-08_at_3.33.49_PM_1788861931661.jpeg',
     alt: 'Our little angel with her parents in a lavender dress',
     caption: 'A little lavender moment',
   },
   {
-    src: '/gallery/WhatsApp_Image_2026-09-08_at_3.33.48_PM_(3)_1788861931662.jpeg',
+    src: '/__mockup/images/WhatsApp_Image_2026-09-08_at_3.33.48_PM_(3)_1788861931662.jpeg',
     alt: 'A collage of treasured baby portraits',
     caption: 'Little days, many dreams',
   },
   {
-    src: '/gallery/WhatsApp_Image_2026-09-08_at_3.33.48_PM_(2)_1788861931662.jpeg',
+    src: '/__mockup/images/WhatsApp_Image_2026-09-08_at_3.33.48_PM_(2)_1788861931662.jpeg',
     alt: 'A collage of sweet newborn portraits',
     caption: 'Softly, she arrived',
   },
   {
-    src: '/gallery/WhatsApp_Image_2026-09-08_at_3.33.48_PM_(1)_1788861931662.jpeg',
+    src: '/__mockup/images/WhatsApp_Image_2026-09-08_at_3.33.48_PM_(1)_1788861931662.jpeg',
     alt: 'Family portraits with our little angel',
     caption: 'Our growing little world',
   },
   {
-    src: '/gallery/WhatsApp_Image_2026-09-08_at_3.33.48_PM_1788861931662.jpeg',
+    src: '/__mockup/images/WhatsApp_Image_2026-09-08_at_3.33.48_PM_1788861931662.jpeg',
     alt: 'Our little angel with her cousins',
     caption: 'Surrounded by family',
   },
   {
-    src: '/gallery/WhatsApp_Image_2026-09-08_at_3.33.47_PM_1788861931663.jpeg',
+    src: '/__mockup/images/WhatsApp_Image_2026-09-08_at_3.33.47_PM_1788861931663.jpeg',
     alt: 'Our baby girl with her grandparents and family',
     caption: 'Blessings from every side',
   },
