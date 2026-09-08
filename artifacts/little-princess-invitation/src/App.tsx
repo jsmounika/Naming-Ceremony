@@ -155,27 +155,28 @@ function App() {
         .premium-mobile-menu { display: none; position: fixed; z-index: 19; inset: 115px 15px auto; padding: 16px; border: 1px solid #dec8b3; background: rgba(251,247,239,.98); box-shadow: 0 24px 60px rgba(83,39,48,.18); }
         .premium-mobile-menu.open { display: grid; gap: 4px; animation: premium-drop .35s both; }
         .premium-mobile-menu a { padding: 13px 9px; border-bottom: 1px solid #ead9cb; color: #684953; font-size: 11px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
-        .premium-hero { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) minmax(380px, .84fr); gap: clamp(40px, 7vw, 115px); max-width: 1420px; min-height: calc(100svh - 115px); margin: 0 auto; padding: clamp(70px, 9vw, 135px) clamp(24px, 7vw, 108px) clamp(90px, 10vw, 140px); align-items: center; }
-        .premium-hero::before { position: absolute; top: 12%; left: -7%; width: 280px; height: 280px; border: 1px solid rgba(184,144,84,.43); border-radius: 50%; content: ''; }
-        .premium-hero::after { position: absolute; right: 23%; bottom: 6%; width: 95px; height: 95px; border: 1px solid rgba(184,144,84,.35); border-radius: 50%; content: ''; }
-        .premium-hero-copy { position: relative; z-index: 1; }
+        .premium-hero { position: relative; display: flex; max-width: 1180px; min-height: calc(100svh - 115px); margin: 0 auto; padding: clamp(62px, 8vw, 112px) clamp(24px, 7vw, 108px) clamp(90px, 10vw, 140px); align-items: center; justify-content: center; text-align: center; }
+        .premium-hero::before { position: absolute; top: 12%; left: 50%; width: 300px; height: 300px; border: 1px solid rgba(184,144,84,.34); border-radius: 50%; content: ''; transform: translateX(-50%); }
+        .premium-hero::after { position: absolute; right: 10%; bottom: 7%; width: 95px; height: 95px; border: 1px solid rgba(184,144,84,.35); border-radius: 50%; content: ''; }
+        .premium-hero-copy { position: relative; z-index: 1; display: flex; width: 100%; max-width: 1040px; flex-direction: column; align-items: center; margin: 0 auto; }
         .premium-kicker { display: flex; align-items: center; gap: 11px; color: var(--premium-rose); font-size: 10px; font-weight: 700; letter-spacing: .27em; text-transform: uppercase; }
         .premium-kicker::before { width: 41px; height: 1px; background: var(--premium-gold); content: ''; }
-        .premium-hero h1 { max-width: 720px; margin: 24px 0 23px; color: var(--premium-wine); font-family: var(--premium-display); font-size: clamp(65px, 9vw, 140px); font-weight: 400; letter-spacing: -.06em; line-height: .78; }
-        .premium-hero h1 em { display: block; margin-left: clamp(12px, 3vw, 48px); color: var(--premium-rose); font-family: var(--premium-serif); font-size: .72em; font-weight: 500; letter-spacing: -.045em; }
-        .premium-lead { max-width: 510px; margin: 0; color: #725962; font-family: var(--premium-serif); font-size: clamp(21px, 2.15vw, 29px); line-height: 1.18; }
-        .premium-meta { display: flex; flex-wrap: wrap; gap: 12px 25px; margin-top: 32px; color: #7d5960; font-size: 10px; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
+        .premium-hero-intro { max-width: 620px; margin: 0 auto; color: #765e62; font-family: var(--premium-serif); font-size: clamp(20px, 2.2vw, 27px); line-height: 1.3; }
+        .premium-hero h1 { max-width: 920px; margin: 8px auto 23px; color: var(--premium-wine); font-family: var(--premium-display); font-size: clamp(58px, 8vw, 116px); font-weight: 400; letter-spacing: -.055em; line-height: .84; text-align: center; text-wrap: balance; }
+        .premium-hero h1 em { display: block; margin-left: 0; color: var(--premium-gold); font-family: var(--premium-serif); font-size: .7em; font-weight: 500; letter-spacing: -.045em; }
+        .premium-lead { max-width: 600px; margin: 0 auto; color: #725962; font-family: var(--premium-serif); font-size: clamp(20px, 2vw, 27px); line-height: 1.2; }
+        .premium-meta { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px 25px; margin-top: 32px; color: #7d5960; font-size: 10px; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
         .premium-meta span { display: inline-flex; align-items: center; gap: 8px; }
         .premium-meta svg { color: var(--premium-gold); }
-        .premium-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 37px; }
+        .premium-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 37px; }
         .premium-button, .premium-ghost { display: inline-flex; min-height: 49px; align-items: center; justify-content: center; gap: 9px; padding: 0 22px; border-radius: 999px; font-size: 10px; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; transition: transform .45s cubic-bezier(.2,.7,.2,1), background-color .35s ease, border-color .35s ease, color .35s ease; }
         .premium-button { border: 1px solid var(--premium-wine); background: var(--premium-wine); color: #fdf6eb; box-shadow: 0 11px 23px rgba(111,41,59,.17); }
         .premium-button:hover { background: #531c2d; transform: translateY(-3px); }
         .premium-ghost { border: 1px solid #d7b997; background: transparent; color: var(--premium-wine); }
         .premium-ghost:hover { border-color: var(--premium-wine); background: #f2e3d7; transform: translateY(-3px); }
-        .premium-hero-art { position: relative; min-height: 525px; }
-        .premium-hero-art::before { position: absolute; top: 8%; right: 1%; width: min(96%, 540px); height: 395px; border: 1px solid rgba(184,144,84,.64); border-radius: 28px 28px 102px 28px; content: ''; transform: rotate(5deg); }
-        .premium-photo-frame { position: absolute; top: 0; right: 8%; width: min(90%, 520px); aspect-ratio: 1.52; height: auto; overflow: hidden; border: 10px solid #fffaf1; border-radius: 28px 28px 108px 28px; box-shadow: 18px 22px 0 rgba(216,177,131,.35), 0 26px 70px rgba(80,35,47,.18); transform: rotate(-2deg); }
+        .premium-hero-art { position: relative; width: min(100%, 690px); min-height: 425px; margin: 24px auto 6px; }
+        .premium-hero-art::before { position: absolute; top: 8%; right: 1%; width: 94%; height: 370px; border: 1px solid rgba(184,144,84,.64); border-radius: 28px 28px 112px 28px; content: ''; transform: rotate(5deg); }
+        .premium-photo-frame { position: absolute; top: 0; right: 5%; width: 90%; aspect-ratio: 1.55; height: auto; overflow: hidden; border: 10px solid #fffaf1; border-radius: 28px 28px 116px 28px; box-shadow: 18px 22px 0 rgba(216,177,131,.35), 0 26px 70px rgba(80,35,47,.18); transform: rotate(-2deg); }
         .premium-photo-frame img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s cubic-bezier(.2,.7,.2,1); }
         .premium-photo-frame:hover img { transform: scale(1.035); }
         .premium-photo-label { position: absolute; right: 0; bottom: 2%; display: grid; gap: 5px; width: 183px; padding: 18px; border: 1px solid var(--premium-gold); background: #f3e2d1; color: var(--premium-wine); box-shadow: 0 15px 35px rgba(74,37,44,.11); transform: rotate(3deg); }
@@ -189,7 +190,7 @@ function App() {
         .floral-mark i:nth-child(3) { bottom: 2px; right: 21px; transform: rotate(145deg); }
         .floral-mark i:nth-child(4) { bottom: 19px; left: 3px; transform: rotate(215deg); }
         .floral-mark b { top: 31px; left: 31px; width: 16px; height: 16px; border-radius: 50%; background: currentColor; }
-        .premium-hero-flower { top: -1%; left: 0; transform: rotate(-16deg); }
+        .premium-hero-flower { top: 2%; left: 3%; transform: rotate(-16deg); }
         .premium-section { max-width: 1300px; margin: 0 auto; padding: clamp(105px, 13vw, 190px) clamp(24px, 6.5vw, 82px); }
         .premium-section-heading { max-width: 680px; margin-bottom: 50px; }
         .premium-section-heading h2 { margin: 16px 0 0; color: var(--premium-wine); font-family: var(--premium-display); font-size: clamp(47px, 6.8vw, 86px); font-weight: 400; letter-spacing: -.06em; line-height: .8; }
@@ -285,8 +286,8 @@ function App() {
         @media (max-width: 900px) {
           .premium-links { display: none; }
           .premium-menu-button { display: inline-flex; }
-          .premium-hero { grid-template-columns: 1fr; min-height: auto; padding-top: 78px; }
-          .premium-hero-art { width: 100%; max-width: 575px; min-height: 560px; margin: 0 auto; }
+          .premium-hero { min-height: auto; padding-top: 78px; }
+          .premium-hero-art { width: 100%; max-width: 650px; min-height: 425px; margin: 24px auto 6px; }
           .premium-details-layout { grid-template-columns: 1fr; }
           .premium-countdown { position: static; }
           .premium-location-card { grid-template-columns: 1fr; }
@@ -299,11 +300,12 @@ function App() {
           .premium-brand-copy strong { font-size: 20px; }
           .premium-brand-copy span { font-size: 7px; }
           .premium-mobile-menu { inset: 101px 14px auto; }
-          .premium-hero { padding: 64px 21px 82px; }
-          .premium-hero h1 { font-size: clamp(65px, 20vw, 96px); }
-          .premium-lead { font-size: 22px; }
-          .premium-hero-art { min-height: 375px; margin-top: 12px; }
-          .premium-hero-art::before { top: 8%; right: -2%; width: 96%; height: 260px; border-radius: 22px 22px 72px 22px; }
+          .premium-hero { padding: 58px 21px 82px; }
+          .premium-hero-intro { max-width: 335px; font-size: 19px; }
+          .premium-hero h1 { margin-top: 5px; font-size: clamp(43px, 13vw, 68px); line-height: .86; }
+          .premium-lead { font-size: 21px; }
+          .premium-hero-art { min-height: 285px; margin: 22px auto 8px; }
+          .premium-hero-art::before { top: 8%; right: -2%; width: 96%; height: 228px; border-radius: 22px 22px 72px 22px; }
           .premium-photo-frame { right: 4%; width: 92%; aspect-ratio: 1.42; height: auto; border-radius: 22px 22px 78px 22px; }
           .premium-photo-label { width: 150px; padding: 14px; }
           .premium-photo-label strong { font-size: 23px; }
@@ -372,8 +374,18 @@ function App() {
 
       <section className="premium-hero" id="premium-home">
         <div className="premium-hero-copy premium-reveal">
-          <div className="premium-kicker">With grateful hearts, we invite you</div>
-          <h1>A precious beginning<br /><em>named with love.</em></h1>
+          <p className="premium-hero-intro">With hearts full of love and happiness, we invite you to celebrate a very special moment.</p>
+          <div className="premium-hero-art" aria-label="A portrait of our precious baby girl surrounded by pink details">
+            <FloralMark className="premium-hero-flower" />
+            <div className="premium-photo-frame">
+              <img src={ceremonyFeatureImage.src} alt={ceremonyFeatureImage.alt} />
+            </div>
+            <div className="premium-photo-label">
+              <span>The guest of honour</span>
+              <strong>Our precious<br />baby girl</strong>
+            </div>
+          </div>
+          <h1>Our Little Princess's<br /><em>Naming Ceremony</em></h1>
           <p className="premium-lead">Our beloved girl is ready to be surrounded by the people whose love will guide her, steady her, and celebrate every chapter ahead.</p>
           <div className="premium-meta">
             <span><CalendarDays size={15} /> Monday · 12 October 2026</span>
@@ -382,16 +394,6 @@ function App() {
           <div className="premium-actions">
             <button className="premium-button" type="button" onClick={() => jumpTo('premium-details')}>Read the invitation <ChevronDown size={15} /></button>
             <button className="premium-ghost" type="button" onClick={() => jumpTo('premium-gallery')}>Enter her album <ImageIcon size={15} /></button>
-          </div>
-        </div>
-        <div className="premium-hero-art premium-reveal" aria-label="A portrait of our precious baby girl surrounded by pink details">
-          <FloralMark className="premium-hero-flower" />
-          <div className="premium-photo-frame">
-            <img src={ceremonyFeatureImage.src} alt={ceremonyFeatureImage.alt} />
-          </div>
-          <div className="premium-photo-label">
-            <span>The guest of honour</span>
-            <strong>Our precious<br />baby girl</strong>
           </div>
         </div>
       </section>
