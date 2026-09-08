@@ -463,8 +463,8 @@ function App() {
               <div><h3>10:00 AM IST</h3><p>We will begin the ceremony in the morning, followed by time together over food and conversation.</p><small>The ceremony begins promptly</small></div>
             </div>
             <div className="premium-detail-row">
-              <div className="premium-detail-icon"><Heart size={20} /></div>
-              <div><h3>Come with your blessings</h3><p>Your presence is the most treasured gift. Traditional attire and your warmest wishes are warmly welcomed.</p><small>From our family to yours</small></div>
+              <div className="premium-detail-icon"><MapPin size={20} /></div>
+              <div><h3>Venue</h3><p>JMS House, Biradhanapalli,<br />Kuppam, Chittoor District,<br />Andhra Pradesh - 517425</p><small>Where we will gather</small></div>
             </div>
           </div>
         </div>
