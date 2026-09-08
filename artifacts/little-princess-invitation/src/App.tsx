@@ -363,7 +363,7 @@ function App() {
           <a href="#premium-home">Home</a>
           <a href="#premium-story">Her story</a>
           <a href="#premium-details">The ceremony</a>
-          <a href="#premium-location">Location / Venue</a>
+          <a href="#premium-location">Location</a>
           <a href="#premium-gallery">Album</a>
         </nav>
         <button className="premium-menu-button" type="button" aria-label={menuOpen ? 'Close menu' : 'Open menu'} aria-expanded={menuOpen} onClick={() => setMenuOpen((open) => !open)}>
@@ -374,7 +374,7 @@ function App() {
         <a href="#premium-home" onClick={() => setMenuOpen(false)}>Home</a>
         <a href="#premium-story" onClick={() => setMenuOpen(false)}>Her story</a>
         <a href="#premium-details" onClick={() => setMenuOpen(false)}>The ceremony</a>
-        <a href="#premium-location" onClick={() => setMenuOpen(false)}>Location / Venue</a>
+        <a href="#premium-location" onClick={() => setMenuOpen(false)}>Location</a>
         <a href="#premium-gallery" onClick={() => setMenuOpen(false)}>Album</a>
       </nav>
 
@@ -463,8 +463,8 @@ function App() {
               <div><h3>10:00 AM IST</h3><p>We will begin the ceremony in the morning, followed by time together over food and conversation.</p><small>The ceremony begins promptly</small></div>
             </div>
             <div className="premium-detail-row">
-              <div className="premium-detail-icon"><MapPin size={20} /></div>
-              <div><h3>Venue</h3><p>JMS House, Biradhanapalli,<br />Kuppam, Chittoor District,<br />Andhra Pradesh - 517425</p><small>Where we will gather</small></div>
+              <div className="premium-detail-icon"><Heart size={20} /></div>
+              <div><h3>Come with your blessings</h3><p>Your presence is the most treasured gift. Traditional attire and your warmest wishes are warmly welcomed.</p><small>From our family to yours</small></div>
             </div>
           </div>
         </div>
