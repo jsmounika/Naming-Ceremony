@@ -1,0 +1,387 @@
+https://replit.com/refer/mounikajs
+
+Create a beautiful, elegant, emotionally warm, mobile-first website invitation for a Baby Girl Naming Ceremony.
+
+IMPORTANT:
+This is a private family invitation website. The baby's name MUST NOT be displayed or revealed anywhere on the website. Do not use placeholders such as "[Baby Name]" either. Refer to the baby only as:
+- Our Little Princess
+- Our Little Angel
+- Our Precious Baby Girl
+
+The website should feel premium, magical, traditional Indian, and modern at the same time.
+
+==================================================
+WEBSITE THEME & DESIGN
+==================================================
+
+Create a luxurious Baby Girl Naming Ceremony invitation website with a soft, elegant Indian celebration theme.
+
+Design style:
+- Premium and elegant
+- Traditional Indian + modern aesthetics
+- Soft pastel colors
+- Pink, peach, cream, lavender, and subtle gold accents
+- Beautiful floral decorations
+- Jasmine flowers, roses, marigold-inspired flowers, and soft decorative leaves
+- Gentle sparkles and magical particles
+- Soft shadows
+- Rounded elegant cards
+- Smooth animations
+- Cinematic and emotional feeling
+
+Avoid:
+- Overly childish cartoon design
+- Bright neon colors
+- Too much text
+- Cluttered layout
+- Heavy animations that slow down mobile devices
+
+The website must be highly responsive and look especially beautiful on mobile phones.
+
+==================================================
+HERO / WELCOME SECTION
+==================================================
+
+Create a beautiful full-screen welcome section.
+
+Display a warm and emotional welcome message:
+
+"With hearts full of love and happiness,
+we invite you to celebrate a very special moment..."
+
+Then display prominently:
+
+"Our Little Princess's
+Naming Ceremony"
+
+Add a cute baby-themed decorative illustration or elegant baby silhouette.
+
+Add floating flower petals and subtle sparkle animations.
+
+Display:
+
+"With Love ❤️
+S Udhay Kiran & J S Mounika"
+
+Add a beautiful animated "Scroll Down" indicator.
+
+==================================================
+BABY LOVE SECTION
+==================================================
+
+Create an emotional section celebrating the arrival of our little princess.
+
+Heading:
+
+"Our Little Angel 👶💖"
+
+Text:
+
+"A tiny little miracle has filled our hearts
+with endless love, happiness, and beautiful memories.
+
+Now, as we begin another precious chapter
+in her beautiful journey,
+we would love to have you by our side."
+
+Use elegant typography and subtle baby-themed illustrations.
+
+IMPORTANT:
+Do not reveal the baby's name.
+
+==================================================
+SPECIAL INVITATION SECTION
+==================================================
+
+Create a visually stunning invitation card.
+
+Heading:
+
+"You're Invited! ✨"
+
+Display:
+
+"Join us as we celebrate
+a beautiful new beginning
+and bless our Little Princess
+on her special Naming Ceremony."
+
+Use elegant floral borders.
+
+Add subtle animation when the invitation card appears while scrolling.
+
+==================================================
+CEREMONY DETAILS SECTION
+==================================================
+
+Create a beautiful premium event details card.
+
+Heading:
+
+"Ceremony Details 🌸"
+
+Display the following information clearly:
+
+📅 DATE
+12 October 2026
+
+⏰ TIME
+10:00 AM
+
+📍 VENUE
+JMS House
+Biradhanapalli, Kuppam
+Chittoor District
+Andhra Pradesh - 517425
+
+Use beautiful icons and elegant cards.
+
+IMPORTANT:
+Make the date and time visually prominent.
+
+==================================================
+LOCATION SECTION
+==================================================
+
+Create a beautiful location section.
+
+Heading:
+
+"Find Us Here 📍"
+
+Display:
+
+"JMS House, Biradhanapalli"
+
+Add a beautiful location card.
+
+Add a prominent button:
+
+"Open in Google Maps 🗺️"
+
+The button should open this exact Google Maps link:
+
+https://maps.app.goo.gl/miwCBvuuLGWgXiDJ9
+
+Open the map in a new tab.
+
+If possible, embed a map preview without affecting performance.
+
+==================================================
+COUNTDOWN SECTION
+==================================================
+
+Create an elegant live countdown timer.
+
+Heading:
+
+"The Celebration Begins In... ✨"
+
+Countdown target:
+
+12 October 2026
+10:00 AM
+Indian Standard Time (IST)
+
+Display:
+
+Days
+Hours
+Minutes
+Seconds
+
+Use beautiful animated number transitions.
+
+After the ceremony time has passed, automatically change the message to:
+
+"The Beautiful Celebration Has Begun! 🎉💖"
+
+==================================================
+FAMILY INVITATION SECTION
+==================================================
+
+Create an emotional section.
+
+Heading:
+
+"Your Presence Means Everything 💖"
+
+Text:
+
+"Your blessings, love, and presence
+will make this beautiful occasion
+even more memorable.
+
+We would be delighted
+to celebrate this precious moment
+with you and your family."
+
+Display:
+
+"With Love,
+S Udhay Kiran & J S Mounika"
+
+Use elegant handwriting-style typography for the parents' names.
+
+==================================================
+PHOTO GALLERY SECTION
+==================================================
+
+Create a beautiful photo gallery section.
+
+Heading:
+
+"Little Moments, Endless Love 📸"
+
+Create 6 to 8 elegant photo placeholders.
+
+IMPORTANT:
+Use easy-to-replace image placeholders so I can upload the baby's photos later.
+
+The photo gallery should:
+- Have rounded corners
+- Include smooth hover effects on desktop
+- Include smooth swipe experience on mobile
+- Have subtle fade-in animations
+
+Do not use random baby photos permanently.
+Clearly make all photos easy for me to replace.
+
+==================================================
+FINAL SECTION
+==================================================
+
+Create a beautiful emotional ending section.
+
+Use a soft floral background with subtle sparkles.
+
+Display:
+
+"One Little Princess...
+One Beautiful Beginning...
+A Lifetime of Love... 💖"
+
+Then:
+
+"We can't wait to celebrate
+this special day with you!"
+
+Finally display:
+
+"With Love,
+S Udhay Kiran & J S Mounika"
+
+Add a small:
+
+"See You There! 🌸✨"
+
+==================================================
+ANIMATIONS
+==================================================
+
+Use smooth and elegant animations.
+
+Include:
+- Floating flower petals
+- Subtle sparkle effects
+- Fade-in sections while scrolling
+- Gentle slide-up animations
+- Smooth button interactions
+- Elegant card animations
+
+IMPORTANT:
+Animations should be smooth and premium.
+Do not make the website look like a gaming website.
+Do not overuse animations.
+
+Respect accessibility and reduced-motion preferences.
+
+==================================================
+TYPOGRAPHY
+==================================================
+
+Use a combination of:
+
+- Elegant serif font for headings
+- Clean modern font for body text
+- Handwritten elegant font only for special names/signatures
+
+Make all text highly readable.
+
+==================================================
+MOBILE RESPONSIVENESS
+==================================================
+
+This is extremely important.
+
+Most guests will open this invitation on their mobile phones.
+
+Design mobile-first.
+
+Ensure:
+- All text fits properly
+- Buttons are large enough to tap
+- Cards stack properly
+- Images resize correctly
+- Countdown looks good on small screens
+- Google Maps button is easy to tap
+- No horizontal scrolling
+- Website loads quickly
+
+==================================================
+NAVIGATION
+==================================================
+
+Create a simple elegant sticky navigation.
+
+Menu items:
+
+Home
+Our Little Angel
+Ceremony Details
+Location
+Gallery
+
+On mobile, use a beautiful hamburger menu.
+
+==================================================
+TECHNICAL REQUIREMENTS
+==================================================
+
+Create a complete functional website.
+
+Use:
+- Clean component structure
+- Responsive design
+- Modern best practices
+- Smooth performance
+- Accessible design
+
+Do not require login for visitors.
+
+Make the website ready to publish.
+
+IMPORTANT PRIVACY REQUIREMENTS:
+
+- Do NOT reveal the baby's name anywhere.
+- Do NOT create a "Name Reveal" section.
+- Do NOT use any placeholder that suggests the baby's name.
+- The website should remain a beautiful naming ceremony invitation without revealing the name.
+
+Make the final result feel like a premium digital invitation created by a professional designer.
+
+Add a subtle footer:
+
+"Made with Love for Our Little Princess 💖"
+
+==================================================
+FINAL DESIGN GOAL
+==================================================
+
+The website should make visitors feel:
+
+"This is a beautiful, emotional, premium and memorable
+invitation for a very special little princess."
+
+Prioritize elegance, emotional warmth, traditional Indian celebration,
+modern premium design, and excellent mobile experience.

@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Little Princess Naming Ceremony"
+description = "A premium, mobile-first family invitation for a baby girl naming ceremony, with ceremony details, live countdown, location link, and a gallery of the family's provided photos."
+version = "1.0.0"
+id = "artifacts/little-princess-invitation"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 25705
+
+[services.development]
+run = "pnpm --filter @workspace/little-princess-invitation run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/little-princess-invitation", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/little-princess-invitation/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "25705"
+BASE_PATH = "/"
