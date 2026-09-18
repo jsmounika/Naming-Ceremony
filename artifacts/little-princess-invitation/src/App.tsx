@@ -20,49 +20,49 @@ type Countdown = { days: number; hours: number; minutes: number; seconds: number
 
 const galleryImages = [
   {
-    src: '/gallery/WhatsApp_Image_2026-09-08_at_3.33.49_PM_(1)_1788861931661.jpeg',
+    src: '/gallery/parent_1.jpeg',
     alt: 'Our precious baby girl held lovingly by her parents',
     caption: 'Held in love',
   },
   {
-    src: '/gallery/WhatsApp_Image_2026-09-08_at_3.33.49_PM_1788861931661.jpeg',
+    src: '/gallery/parent_2.jpeg',
     alt: 'Our little angel with her parents in a lavender dress',
     caption: 'A little lavender moment',
   },
   {
-    src: '/gallery/WhatsApp_Image_2026-09-08_at_3.33.48_PM_(3)_1788861931662.jpeg',
+    src: '/gallery/baby2.jpeg',
     alt: 'A collage of treasured baby portraits',
     caption: 'Little days, many dreams',
   },
   {
-    src: '/gallery/WhatsApp_Image_2026-09-08_at_3.33.48_PM_(2)_1788861931662.jpeg',
+    src: '/gallery/baby1.jpeg',
     alt: 'A collage of sweet newborn portraits',
     caption: 'Softly, she arrived',
   },
   {
-    src: '/gallery/WhatsApp_Image_2026-09-08_at_3.33.48_PM_(1)_1788861931662.jpeg',
+    src: '/gallery/parents.jpeg',
     alt: 'Family portraits with our little angel',
     caption: 'Our growing little world',
   },
   {
-    src: '/gallery/WhatsApp_Image_2026-09-08_at_3.33.48_PM_1788861931662.jpeg',
+    src: '/gallery/kids.jpeg',
     alt: 'Our little angel with her cousins',
-    caption: 'Surrounded by family',
+    caption: 'Surrounded by kids',
   },
   {
-    src: '/gallery/WhatsApp_Image_2026-09-08_at_3.33.47_PM_1788861931663.jpeg',
+    src: '/gallery/family.jpeg',
     alt: 'Our baby girl with her grandparents and family',
-    caption: 'Blessings from every side',
+    caption: 'Blessings from family',
   },
 ];
 
 const ceremonyFeatureImage = {
-  src: '/gallery/WhatsApp_Image_2026-09-08_at_4.00.05_PM_1788863690427.jpeg',
+  src: '/gallery/princess.jpeg',
   alt: 'Our precious baby girl surrounded by soft pink details',
 };
 
 const parentsNoteImage = {
-  src: '/gallery/WhatsApp_Image_2026-09-08_at_3.33.49_PM_(1)_1788864230977.jpeg',
+  src: '/gallery/parent_1.jpeg',
   alt: 'Our little family sharing a tender moment together',
 };
 
@@ -71,27 +71,32 @@ const journeyScenes = [
     id: 1,
     label: 'A small beginning',
     lines: ['A tiny little miracle', 'entered our lives...'],
+    image: '/gallery/journey-1.jpeg',
   },
   {
     id: 2,
     label: 'The world, made softer',
     lines: ['And suddenly,', 'our world became more beautiful...'],
+    image: '/gallery/journey-2.jpeg',
   },
   {
     id: 3,
     label: 'A home full of love',
     lines: ['She filled our hearts with', 'endless love, laughter,', 'and beautiful memories.'],
     signature: true,
+    image: '/gallery/journey-3.jpeg',
   },
   {
     id: 4,
     label: 'A beautiful anticipation',
     lines: ['And now...', 'it is time for another', 'beautiful beginning.'],
+    image: '/gallery/journey-4.jpeg',
   },
   {
     id: 5,
     label: 'The celebration ahead',
-    lines: ['Join us as we celebrate', 'our Little Princess’s', 'Naming Ceremony.'],
+    lines: ['Join us as we celebrate', 'our Little Princess\u2019s', 'Naming Ceremony.'],
+    image: '/gallery/journey-5.jpeg',
   },
 ];
 
@@ -118,43 +123,6 @@ function FloralMark({ className = '' }: { className?: string }) {
       <i />
       <b />
     </span>
-  );
-}
-
-function JourneyIllustration({ scene }: { scene: number }) {
-  return (
-    <div className={`journey-illustration journey-illustration-${scene}`} aria-hidden="true">
-      <span className="journey-orbit journey-orbit-one" />
-      <span className="journey-orbit journey-orbit-two" />
-      <span className="journey-glow" />
-      <span className="journey-cloud journey-cloud-one" />
-      <span className="journey-cloud journey-cloud-two" />
-      <span className="journey-garden" />
-      <span className="journey-floral-heart" />
-      <span className="journey-arch" />
-      <span className="journey-path" />
-      <span className="journey-character">
-        <span className="journey-character-hair" />
-        <span className="journey-character-face" />
-        <span className="journey-character-bindi" />
-        <span className="journey-character-body" />
-        <span className="journey-character-arm journey-character-arm-one" />
-        <span className="journey-character-arm journey-character-arm-two" />
-        <span className="journey-character-leg journey-character-leg-one" />
-        <span className="journey-character-leg journey-character-leg-two" />
-        <span className="journey-bangle journey-bangle-one" />
-        <span className="journey-bangle journey-bangle-two" />
-        <span className="journey-anklet journey-anklet-one" />
-        <span className="journey-anklet journey-anklet-two" />
-      </span>
-      <span className="journey-butterfly journey-butterfly-one" />
-      <span className="journey-butterfly journey-butterfly-two" />
-      <Flower2 className="journey-flower journey-flower-one" size={30} strokeWidth={1.2} />
-      <Flower2 className="journey-flower journey-flower-two" size={22} strokeWidth={1.2} />
-      <Sparkles className="journey-sparkle journey-sparkle-one" size={24} strokeWidth={1.1} />
-      <Sparkles className="journey-sparkle journey-sparkle-two" size={17} strokeWidth={1.1} />
-      <Heart className="journey-heart" size={20} strokeWidth={1.2} />
-    </div>
   );
 }
 
@@ -190,7 +158,6 @@ function App() {
       setJourneyVisible(Object.fromEntries(scenes.map((scene) => [Number(scene.dataset.journeyScene), true])));
       return;
     }
-
     const observer = new IntersectionObserver(
       (entries) => {
         setJourneyVisible((current) => {
@@ -206,7 +173,6 @@ function App() {
       },
       { threshold: 0.24, rootMargin: '0px 0px -8% 0px' },
     );
-
     scenes.forEach((scene) => observer.observe(scene));
     return () => observer.disconnect();
   }, []);
@@ -302,94 +268,14 @@ function App() {
         .journey-scene:nth-child(even) .journey-scene-copy { order: 1; align-items: flex-end; text-align: right; }
         .journey-scene-number { position: absolute; top: 50%; left: 50%; display: grid; width: 50px; height: 50px; place-items: center; border: 1px solid rgba(184,144,84,.75); border-radius: 50%; background: var(--premium-paper); color: var(--premium-gold); font-family: var(--premium-serif); font-size: 18px; transform: translate(-50%, -50%); }
         .journey-scene-art { display: grid; min-height: 350px; place-items: center; }
+        .journey-scene-photo { position: relative; width: min(100%, 380px); aspect-ratio: 4 / 5; overflow: hidden; border: 10px solid #fffaf1; border-radius: 28px 28px 116px 28px; box-shadow: 0 26px 60px rgba(80,35,47,.18); }
+        .journey-scene-photo img { width: 100%; height: 100%; object-fit: cover; }
         .journey-scene-copy { display: flex; max-width: 470px; flex-direction: column; align-items: flex-start; }
         .journey-scene-copy h3 { margin: 16px 0 0; color: var(--premium-wine); font-family: var(--premium-serif); font-size: clamp(35px, 4.2vw, 63px); font-weight: 500; letter-spacing: -.035em; line-height: .98; }
         .journey-scene-copy h3 span { display: block; }
         .journey-scene-signature { display: flex; align-items: center; gap: 10px; margin-top: 26px; color: var(--premium-rose); font-family: var(--premium-serif); font-size: 25px; }
         .journey-scene-signature svg { color: var(--premium-gold); }
         .journey-scene-copy .premium-button { margin-top: 28px; }
-        .journey-illustration { position: relative; width: min(100%, 380px); aspect-ratio: 1; isolation: isolate; color: var(--premium-gold); }
-        .journey-orbit { position: absolute; inset: 12% 1%; border: 1px solid rgba(184,144,84,.2); border-radius: 50%; transform: rotate(24deg); }
-        .journey-orbit-two { inset: 1% 12%; transform: rotate(-30deg); }
-        .journey-glow { position: absolute; top: 20%; left: 50%; width: 235px; height: 235px; border-radius: 50%; background: radial-gradient(circle, rgba(246,204,204,.75), rgba(246,204,204,.08) 68%, transparent 70%); transform: translateX(-50%); }
-        .journey-cloud { position: absolute; z-index: 3; width: 178px; height: 48px; border: 1px solid rgba(184,144,84,.32); border-radius: 50px; background: linear-gradient(180deg, rgba(255,250,246,.96), rgba(244,221,225,.82)); box-shadow: 0 14px 22px rgba(111,41,59,.1); opacity: 0; }
-        .journey-cloud::before, .journey-cloud::after { position: absolute; border: 1px solid rgba(184,144,84,.25); border-radius: 50%; background: inherit; content: ''; }
-        .journey-cloud::before { bottom: 11px; left: 26px; width: 64px; height: 64px; }
-        .journey-cloud::after { right: 24px; bottom: 8px; width: 51px; height: 51px; }
-        .journey-cloud-one { bottom: 23%; left: 5%; animation: journey-cloud-drift 6s ease-in-out infinite; }
-        .journey-cloud-two { right: 3%; bottom: 32%; width: 124px; transform: scale(.72); animation: journey-cloud-drift 7s ease-in-out -1.4s infinite reverse; }
-        .journey-garden { position: absolute; z-index: 2; right: 8%; bottom: 13%; left: 8%; height: 78px; border: 1px solid rgba(105,130,111,.28); border-radius: 50% 50% 15px 15px; background: linear-gradient(145deg, rgba(238,220,216,.78), rgba(203,213,187,.72)); opacity: 0; }
-        .journey-garden::before, .journey-garden::after { position: absolute; bottom: 20px; width: 50px; height: 50px; border: 5px dotted rgba(181,122,112,.52); border-radius: 50%; content: ''; }
-        .journey-garden::before { left: 15%; }
-        .journey-garden::after { right: 13%; width: 38px; height: 38px; }
-        .journey-floral-heart { position: absolute; z-index: 2; top: 20%; left: 50%; width: 190px; height: 170px; border: 3px solid rgba(181,122,112,.42); border-radius: 52% 48% 48% 52%; background: radial-gradient(circle at 26% 35%, #efaeb7 0 12%, transparent 13%), radial-gradient(circle at 74% 35%, #dfb3c1 0 12%, transparent 13%), radial-gradient(circle at 50% 72%, #f2c8b6 0 14%, transparent 15%), rgba(245,211,213,.3); box-shadow: 0 0 35px rgba(238,177,192,.62); opacity: 0; transform: translateX(-50%) rotate(-45deg); }
-        .journey-floral-heart::before, .journey-floral-heart::after { position: absolute; width: 34px; height: 34px; border: 1px solid rgba(184,144,84,.7); border-radius: 50%; content: ''; }
-        .journey-floral-heart::before { top: 12px; left: 22px; }
-        .journey-floral-heart::after { right: 20px; bottom: 17px; }
-        .journey-arch { position: absolute; z-index: 2; bottom: 14%; left: 50%; width: 252px; height: 220px; border: 2px solid rgba(184,144,84,.7); border-bottom: 0; border-radius: 130px 130px 0 0; opacity: 0; transform: translateX(-50%); }
-        .journey-arch::before, .journey-arch::after { position: absolute; top: -18px; width: 32px; height: 32px; border: 6px dotted rgba(181,122,112,.72); border-radius: 50%; content: ''; }
-        .journey-arch::before { left: 17px; }
-        .journey-arch::after { right: 17px; }
-        .journey-path { position: absolute; z-index: 1; bottom: 0; left: 50%; width: 170px; height: 175px; background: linear-gradient(180deg, rgba(248,222,202,.1), rgba(235,195,180,.78)); clip-path: polygon(36% 0, 64% 0, 100% 100%, 0 100%); opacity: 0; transform: translateX(-50%); }
-        .journey-path::after { position: absolute; top: 20%; left: 50%; width: 8px; height: 8px; border-radius: 50%; background: var(--premium-gold); box-shadow: 0 40px 0 rgba(184,144,84,.65), 0 80px 0 rgba(184,144,84,.4); content: ''; animation: journey-path-glow 3s ease-in-out infinite; }
-        .journey-character { position: absolute; z-index: 5; bottom: 18%; left: 50%; width: 138px; height: 190px; animation: journey-baby-breathe 4.8s ease-in-out infinite; transform: translateX(-50%); }
-        .journey-character-hair { position: absolute; top: 0; left: 50%; width: 82px; height: 66px; border-radius: 55% 58% 34% 42%; background: #6b4650; box-shadow: inset 11px 6px 0 rgba(255,255,255,.08); transform: translateX(-50%) rotate(-5deg); }
-        .journey-character-face { position: absolute; z-index: 2; top: 14px; left: 50%; width: 67px; height: 70px; border: 1px solid rgba(111,41,59,.28); border-radius: 47% 47% 45% 45%; background: #f2c7b7; transform: translateX(-50%); }
-        .journey-character-face::before { position: absolute; top: 31px; left: 20px; width: 5px; height: 7px; border-radius: 50%; background: #62434c; box-shadow: 21px 0 0 #62434c; content: ''; animation: journey-blink 5.5s ease-in-out infinite; }
-        .journey-character-face::after { position: absolute; bottom: 15px; left: 29px; width: 10px; height: 5px; border-bottom: 1px solid #a95568; border-radius: 50%; content: ''; }
-        .journey-character-bindi { position: absolute; z-index: 4; top: 32px; left: 50%; width: 5px; height: 5px; border-radius: 50%; background: #721f35; transform: translateX(-50%); }
-        .journey-character-body { position: absolute; bottom: 30px; left: 50%; width: 98px; height: 95px; border: 1px solid rgba(111,41,59,.24); border-radius: 52% 52% 31% 31%; background: linear-gradient(135deg, #f3c5c9, #e9aab8); box-shadow: inset 0 10px 0 rgba(255,250,246,.35); transform: translateX(-50%); }
-        .journey-character-body::after { position: absolute; top: 23px; left: 50%; width: 30px; height: 10px; border: 1px solid rgba(184,144,84,.52); border-radius: 50%; content: ''; transform: translateX(-50%); }
-        .journey-character-arm { position: absolute; z-index: 3; top: 89px; width: 55px; height: 18px; border: 1px solid rgba(111,41,59,.2); border-radius: 20px; background: #f2c7b7; transform-origin: 10% 50%; }
-        .journey-character-arm-one { left: 13px; transform: rotate(22deg); }
-        .journey-character-arm-two { right: 13px; transform: rotate(-22deg); transform-origin: 90% 50%; }
-        .journey-character-leg { position: absolute; bottom: 5px; width: 24px; height: 46px; border: 1px solid rgba(111,41,59,.2); border-radius: 18px 18px 10px 10px; background: #f2c7b7; }
-        .journey-character-leg-one { left: 38px; }
-        .journey-character-leg-two { right: 38px; }
-        .journey-bangle { position: absolute; z-index: 4; top: 91px; width: 14px; height: 7px; border: 2px solid var(--premium-gold); border-radius: 50%; }
-        .journey-bangle-one { left: 11px; transform: rotate(22deg); }
-        .journey-bangle-two { right: 11px; transform: rotate(-22deg); }
-        .journey-anklet { position: absolute; bottom: 12px; width: 21px; height: 5px; border-bottom: 2px solid var(--premium-gold); border-radius: 50%; }
-        .journey-anklet-one { left: 39px; }
-        .journey-anklet-two { right: 39px; }
-        .journey-butterfly { position: absolute; z-index: 4; width: 10px; height: 10px; border: 1px solid var(--premium-rose); border-radius: 50% 0 50% 0; opacity: 0; transform: rotate(45deg); }
-        .journey-butterfly::after { position: absolute; top: -3px; left: 7px; width: 10px; height: 10px; border: 1px solid var(--premium-rose); border-radius: 0 50% 0 50%; content: ''; }
-        .journey-butterfly-one { top: 28%; right: 13%; animation: journey-butterfly-drift 6s ease-in-out infinite; }
-        .journey-butterfly-two { bottom: 24%; left: 12%; transform: scale(.72) rotate(45deg); animation: journey-butterfly-drift 7s ease-in-out -1.8s infinite reverse; }
-        .journey-flower, .journey-sparkle, .journey-heart { position: absolute; z-index: 6; color: var(--premium-gold); }
-        .journey-flower-one { top: 12%; left: 12%; color: var(--premium-rose); animation: journey-float 5.2s ease-in-out infinite; }
-        .journey-flower-two { right: 13%; bottom: 16%; color: var(--premium-gold); animation: journey-float 4.4s ease-in-out .6s infinite; }
-        .journey-sparkle-one { top: 9%; right: 18%; color: #d5a276; animation: journey-twinkle 3s ease-in-out infinite; }
-        .journey-sparkle-two { bottom: 14%; left: 18%; color: var(--premium-rose); animation: journey-twinkle 3.8s ease-in-out .4s infinite; }
-        .journey-heart { right: 25%; top: 31%; color: var(--premium-rose); animation: journey-twinkle 4.5s ease-in-out .8s infinite; }
-        .journey-illustration-1 .journey-cloud { opacity: 1; }
-        .journey-illustration-1 .journey-character { bottom: 27%; transform: translateX(-50%) scale(.9); }
-        .journey-illustration-1 .journey-butterfly { opacity: .85; }
-        .journey-illustration-2 { transform: rotate(3deg); }
-        .journey-illustration-2 .journey-garden { opacity: 1; }
-        .journey-illustration-2 .journey-butterfly { opacity: .95; }
-        .journey-illustration-2 .journey-character-arm-two { transform: rotate(-48deg); }
-        .journey-illustration-3 { transform: rotate(-2deg); }
-        .journey-illustration-3 .journey-floral-heart { opacity: 1; animation: journey-heart-glow 4.5s ease-in-out infinite; }
-        .journey-illustration-3 .journey-character { bottom: 28%; transform: translateX(-50%) scale(.88); }
-        .journey-illustration-3 .journey-character-arm-one { transform: rotate(-35deg); }
-        .journey-illustration-3 .journey-character-arm-two { transform: rotate(35deg); }
-        .journey-illustration-4 .journey-glow { background: radial-gradient(circle, rgba(232,188,202,.82), rgba(232,188,202,.08) 68%, transparent 70%); }
-        .journey-illustration-4 .journey-arch, .journey-illustration-4 .journey-path { opacity: 1; }
-        .journey-illustration-4 .journey-character { left: 34%; bottom: 17%; }
-        .journey-illustration-4 .journey-character-arm-two { transform: rotate(-55deg); }
-        .journey-illustration-5 .journey-arch, .journey-illustration-5 .journey-path { opacity: 1; }
-        .journey-illustration-5 .journey-character { bottom: 17%; }
-        .journey-illustration-5 .journey-character-arm-one { transform: rotate(-38deg); }
-        .journey-illustration-5 .journey-character-arm-two { transform: rotate(38deg); }
-        @keyframes journey-baby-breathe { 0%, 100% { translate: 0 0; } 50% { translate: 0 -5px; } }
-        @keyframes journey-blink { 0%, 42%, 48%, 100% { transform: scaleY(1); } 45% { transform: scaleY(.12); } }
-        @keyframes journey-cloud-drift { 0%, 100% { translate: 0 0; } 50% { translate: 12px -6px; } }
-        @keyframes journey-butterfly-drift { 0%, 100% { translate: 0 0; rotate: -6deg; } 50% { translate: 18px -18px; rotate: 8deg; } }
-        @keyframes journey-heart-glow { 0%, 100% { opacity: .72; filter: drop-shadow(0 0 0 rgba(238,177,192,0)); } 50% { opacity: 1; filter: drop-shadow(0 0 18px rgba(238,177,192,.8)); } }
-        @keyframes journey-path-glow { 0%, 100% { opacity: .45; translate: 0 0; } 50% { opacity: 1; translate: 0 18px; } }
-        @keyframes journey-float { 0%, 100% { transform: translateY(0) rotate(0); } 50% { transform: translateY(-9px) rotate(5deg); } }
-        @keyframes journey-twinkle { 0%, 100% { opacity: .5; transform: scale(.9) rotate(0); } 50% { opacity: 1; transform: scale(1.12) rotate(10deg); } }
         .premium-section { max-width: 1300px; margin: 0 auto; padding: clamp(105px, 13vw, 190px) clamp(24px, 6.5vw, 82px); }
         .premium-section-heading { max-width: 680px; margin-bottom: 50px; }
         .premium-section-heading h2 { margin: 16px 0 0; color: var(--premium-wine); font-family: var(--premium-display); font-size: clamp(47px, 6.8vw, 86px); font-weight: 400; letter-spacing: -.06em; line-height: .8; }
@@ -402,7 +288,7 @@ function App() {
         .premium-story-photo::before { position: absolute; inset: 28px 26px 0 0; border: 1px solid var(--premium-gold); content: ''; }
         .premium-story-photo img { position: relative; display: block; width: 100%; height: auto; border-radius: 28px 150px 22px 22px; background: #f0ddd7; object-fit: contain; }
         .premium-story-copy blockquote { margin: 0; color: var(--premium-wine); font-family: var(--premium-serif); font-size: clamp(32px, 3.7vw, 55px); line-height: .99; }
-        .premium-story-copy blockquote::before { display: block; margin-bottom: 8px; color: var(--premium-gold); content: '“'; font-family: var(--premium-display); font-size: 79px; line-height: .35; }
+        .premium-story-copy blockquote::before { display: block; margin-bottom: 8px; color: var(--premium-gold); content: '\u201c'; font-family: var(--premium-display); font-size: 79px; line-height: .35; }
         .premium-story-copy p { max-width: 530px; margin: 28px 0 0; color: #795f63; line-height: 1.85; }
         .premium-signature { display: flex; align-items: center; gap: 13px; margin-top: 30px; color: var(--premium-rose); font-family: var(--premium-serif); font-size: 24px; }
         .premium-signature::before { width: 42px; height: 1px; background: var(--premium-gold); content: ''; }
@@ -525,7 +411,7 @@ function App() {
           .journey-track::before { left: 19px; }
           .journey-scene-number { top: 28px; left: 19px; width: 32px; height: 32px; font-size: 14px; }
           .journey-scene-art { min-height: 230px; }
-          .journey-illustration { width: min(100%, 300px); }
+          .journey-scene-photo { width: min(100%, 300px); }
           .journey-scene-copy h3 { font-size: clamp(34px, 11vw, 48px); }
           .journey-scene-signature { font-size: 22px; }
           .premium-story-grid { grid-template-columns: 1fr; gap: 46px; }
@@ -559,7 +445,7 @@ function App() {
 
       <div className="premium-topline">
         <Flower2 size={13} aria-hidden="true" />
-        <span>A cherished family gathering · 12 October 2026</span>
+        <span>A cherished family gathering &middot; 12 October 2026</span>
         <Flower2 size={13} aria-hidden="true" />
       </div>
 
@@ -582,6 +468,7 @@ function App() {
           {menuOpen ? <X size={19} /> : <Menu size={19} />}
         </button>
       </header>
+
       <nav className={`premium-mobile-menu ${menuOpen ? 'open' : ''}`} aria-label="Mobile navigation">
         <a href="#premium-home" onClick={() => setMenuOpen(false)}>Home</a>
         <a href="#premium-story" onClick={() => setMenuOpen(false)}>Her story</a>
@@ -606,7 +493,7 @@ function App() {
           <h1>Our Little Princess's<br /><em>Naming Ceremony</em></h1>
           <p className="premium-lead">Our beloved girl is ready to be surrounded by the people whose love will guide her, steady her, and celebrate every chapter ahead.</p>
           <div className="premium-meta">
-            <span><CalendarDays size={15} /> Monday · 12 October 2026</span>
+            <span><CalendarDays size={15} /> Monday &middot; 12 October 2026</span>
             <span><Clock3 size={15} /> 10:00 AM IST</span>
           </div>
           <div className="premium-actions">
@@ -633,7 +520,9 @@ function App() {
                 {String(scene.id).padStart(2, '0')}
               </div>
               <div className="journey-scene-art">
-                <JourneyIllustration scene={scene.id} />
+                <div className="journey-scene-photo">
+                  <img src={scene.image} alt={scene.label} loading="lazy" />
+                </div>
               </div>
               <div className="journey-scene-copy">
                 <div className="premium-kicker">{scene.label}</div>
@@ -666,7 +555,7 @@ function App() {
           </div>
           <div className="premium-story-copy">
             <blockquote>She has made our world softer, brighter, and wonderfully full.</blockquote>
-            <p>We are overjoyed to share a beautiful milestone in our daughter’s life. Please join us as family, friends, and well-wishers gather to offer their blessings at this intimate beginning.</p>
+            <p>We are overjoyed to share a beautiful milestone in our daughter's life. Please join us as family, friends, and well-wishers gather to offer their blessings at this intimate beginning.</p>
             <div className="premium-signature">With love, S Udhay Kiran &amp; J S Mounika</div>
           </div>
         </div>
@@ -732,7 +621,7 @@ function App() {
           </div>
           <div className="premium-map" aria-label="Illustrated map showing JMS House">
             <div className="premium-map-pin"><Navigation size={20} fill="currentColor" /></div>
-            <div className="premium-map-label">JMS House · Biradhanapalli</div>
+            <div className="premium-map-label">JMS House &middot; Biradhanapalli</div>
           </div>
         </div>
       </section>
@@ -768,7 +657,7 @@ function App() {
 
       <footer className="premium-footer">
         <span>With love, S Udhay Kiran &amp; J S Mounika</span>
-        <span>A treasured family gathering · 12.10.2026</span>
+        <span>A treasured family gathering &middot; 12.10.2026</span>
       </footer>
 
       {activeImage !== null && (
