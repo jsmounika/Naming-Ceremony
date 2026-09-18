@@ -71,32 +71,37 @@ const journeyScenes = [
     id: 1,
     label: 'A small beginning',
     lines: ['A tiny little miracle', 'entered our lives...'],
-    image: '/gallery/journey-1.jpeg',
+    image: '/journey/baby-journey-3d-scene-1.jpeg',
+    alt: 'Our Little Princess reaching toward a butterfly among clouds and flowers',
   },
   {
     id: 2,
     label: 'The world, made softer',
     lines: ['And suddenly,', 'our world became more beautiful...'],
-    image: '/gallery/journey-2.jpeg',
+    image: '/journey/baby-journey-3d-scene-2.jpeg',
+    alt: 'Our Little Princess reaching toward a butterfly in a pastel flower garden',
   },
   {
     id: 3,
     label: 'A home full of love',
     lines: ['She filled our hearts with', 'endless love, laughter,', 'and beautiful memories.'],
     signature: true,
-    image: '/gallery/journey-3.jpeg',
+    image: '/journey/baby-journey-3d-scene-3.jpeg',
+    alt: 'Our Little Princess sitting inside a glowing floral heart',
   },
   {
     id: 4,
     label: 'A beautiful anticipation',
     lines: ['And now...', 'it is time for another', 'beautiful beginning.'],
-    image: '/gallery/journey-4.jpeg',
+    image: '/journey/baby-journey-3d-scene-4.jpeg',
+    alt: 'Our Little Princess pointing toward a warmly lit floral celebration pathway',
   },
   {
     id: 5,
     label: 'The celebration ahead',
-    lines: ['Join us as we celebrate', 'our Little Princess\u2019s', 'Naming Ceremony.'],
-    image: '/gallery/journey-5.jpeg',
+    lines: ['Join us as we celebrate', 'our Little Princess’s', 'Naming Ceremony.'],
+    image: '/journey/baby-journey-3d-scene-5.jpeg',
+    alt: 'Our Little Princess welcoming guests beneath a traditional floral arch',
   },
 ];
 
@@ -276,6 +281,15 @@ function App() {
         .journey-scene-signature { display: flex; align-items: center; gap: 10px; margin-top: 26px; color: var(--premium-rose); font-family: var(--premium-serif); font-size: 25px; }
         .journey-scene-signature svg { color: var(--premium-gold); }
         .journey-scene-copy .premium-button { margin-top: 28px; }
+        .journey-art-frame { position: relative; width: min(100%, 510px); aspect-ratio: 1; overflow: hidden; border: 9px solid #fff8ef; border-radius: 42px 42px 120px 42px; background: #efd8d2; box-shadow: 18px 20px 0 rgba(215,177,131,.34), 0 24px 46px rgba(111,41,59,.16); transform: rotate(-2deg); }
+        .journey-art-frame::before { position: absolute; z-index: 2; inset: 14px; border: 1px solid rgba(255,248,239,.66); border-radius: 28px 28px 92px 28px; content: ''; pointer-events: none; }
+        .journey-art-frame::after { position: absolute; z-index: 3; inset: 0; background: linear-gradient(135deg, rgba(255,246,236,.18), transparent 35%, rgba(111,41,59,.1)); content: ''; pointer-events: none; }
+        .journey-art-image { position: relative; display: block; width: 100%; height: 100%; object-fit: cover; transition: transform 1.1s cubic-bezier(.2,.7,.2,1); }
+        .journey-scene:nth-child(even) .journey-art-frame { border-radius: 42px 120px 42px 42px; transform: rotate(2deg); }
+        .journey-scene:nth-child(3) .journey-art-frame { border-radius: 50% 50% 42px 42px; }
+        .journey-scene:last-child .journey-art-frame { box-shadow: 18px 20px 0 rgba(215,177,131,.34), 0 24px 46px rgba(111,41,59,.2); }
+        .journey-scene.is-visible .journey-art-image { animation: journey-art-breathe 9s ease-in-out infinite; }
+        @keyframes journey-art-breathe { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.035); } }
         .premium-section { max-width: 1300px; margin: 0 auto; padding: clamp(105px, 13vw, 190px) clamp(24px, 6.5vw, 82px); }
         .premium-section-heading { max-width: 680px; margin-bottom: 50px; }
         .premium-section-heading h2 { margin: 16px 0 0; color: var(--premium-wine); font-family: var(--premium-display); font-size: clamp(47px, 6.8vw, 86px); font-weight: 400; letter-spacing: -.06em; line-height: .8; }
@@ -411,7 +425,7 @@ function App() {
           .journey-track::before { left: 19px; }
           .journey-scene-number { top: 28px; left: 19px; width: 32px; height: 32px; font-size: 14px; }
           .journey-scene-art { min-height: 230px; }
-          .journey-scene-photo { width: min(100%, 300px); }
+          .journey-art-frame { width: min(100%, 320px); }
           .journey-scene-copy h3 { font-size: clamp(34px, 11vw, 48px); }
           .journey-scene-signature { font-size: 22px; }
           .premium-story-grid { grid-template-columns: 1fr; gap: 46px; }
@@ -520,8 +534,13 @@ function App() {
                 {String(scene.id).padStart(2, '0')}
               </div>
               <div className="journey-scene-art">
-                <div className="journey-scene-photo">
-                  <img src={scene.image} alt={scene.label} loading="lazy" />
+                <div className="journey-art-frame">
+                  <img
+                    className="journey-art-image"
+                    src={scene.image}
+                    alt={scene.alt}
+                    loading={scene.id === 1 ? 'eager' : 'lazy'}
+                  />
                 </div>
               </div>
               <div className="journey-scene-copy">
