@@ -20,49 +20,49 @@ type Countdown = { days: number; hours: number; minutes: number; seconds: number
 
 const galleryImages = [
   {
-    src: '/gallery/WhatsApp_Image_2026-09-08_at_3.33.49_PM_(1)_1788861931661.jpeg',
+    src: '/gallery/parent_1.jpeg',
     alt: 'Our precious baby girl held lovingly by her parents',
     caption: 'Held in love',
   },
   {
-    src: '/gallery/WhatsApp_Image_2026-09-08_at_3.33.49_PM_1788861931661.jpeg',
+    src: '/gallery/parent_2.jpeg',
     alt: 'Our little angel with her parents in a lavender dress',
     caption: 'A little lavender moment',
   },
   {
-    src: '/gallery/WhatsApp_Image_2026-09-08_at_3.33.48_PM_(3)_1788861931662.jpeg',
+    src: '/gallery/baby2.jpeg',
     alt: 'A collage of treasured baby portraits',
     caption: 'Little days, many dreams',
   },
   {
-    src: '/gallery/WhatsApp_Image_2026-09-08_at_3.33.48_PM_(2)_1788861931662.jpeg',
+    src: '/gallery/baby1.jpeg',
     alt: 'A collage of sweet newborn portraits',
     caption: 'Softly, she arrived',
   },
   {
-    src: '/gallery/WhatsApp_Image_2026-09-08_at_3.33.48_PM_(1)_1788861931662.jpeg',
+    src: '/gallery/parents.jpeg',
     alt: 'Family portraits with our little angel',
     caption: 'Our growing little world',
   },
   {
-    src: '/gallery/WhatsApp_Image_2026-09-08_at_3.33.48_PM_1788861931662.jpeg',
+    src: '/gallery/kids.jpeg',
     alt: 'Our little angel with her cousins',
-    caption: 'Surrounded by family',
+    caption: 'Surrounded by kids',
   },
   {
-    src: '/gallery/WhatsApp_Image_2026-09-08_at_3.33.47_PM_1788861931663.jpeg',
+    src: '/gallery/family.jpeg',
     alt: 'Our baby girl with her grandparents and family',
-    caption: 'Blessings from every side',
+    caption: 'Blessings from family',
   },
 ];
 
 const ceremonyFeatureImage = {
-  src: '/gallery/WhatsApp_Image_2026-09-08_at_4.00.05_PM_1788863690427.jpeg',
+  src: '/gallery/princess.jpeg',
   alt: 'Our precious baby girl surrounded by soft pink details',
 };
 
 const parentsNoteImage = {
-  src: '/gallery/WhatsApp_Image_2026-09-08_at_3.33.49_PM_(1)_1788864230977.jpeg',
+  src: '/gallery/parent_1.jpeg',
   alt: 'Our little family sharing a tender moment together',
 };
 
@@ -163,7 +163,6 @@ function App() {
       setJourneyVisible(Object.fromEntries(scenes.map((scene) => [Number(scene.dataset.journeyScene), true])));
       return;
     }
-
     const observer = new IntersectionObserver(
       (entries) => {
         setJourneyVisible((current) => {
@@ -179,7 +178,6 @@ function App() {
       },
       { threshold: 0.24, rootMargin: '0px 0px -8% 0px' },
     );
-
     scenes.forEach((scene) => observer.observe(scene));
     return () => observer.disconnect();
   }, []);
@@ -275,6 +273,8 @@ function App() {
         .journey-scene:nth-child(even) .journey-scene-copy { order: 1; align-items: flex-end; text-align: right; }
         .journey-scene-number { position: absolute; top: 50%; left: 50%; display: grid; width: 50px; height: 50px; place-items: center; border: 1px solid rgba(184,144,84,.75); border-radius: 50%; background: var(--premium-paper); color: var(--premium-gold); font-family: var(--premium-serif); font-size: 18px; transform: translate(-50%, -50%); }
         .journey-scene-art { display: grid; min-height: 350px; place-items: center; }
+        .journey-scene-photo { position: relative; width: min(100%, 380px); aspect-ratio: 4 / 5; overflow: hidden; border: 10px solid #fffaf1; border-radius: 28px 28px 116px 28px; box-shadow: 0 26px 60px rgba(80,35,47,.18); }
+        .journey-scene-photo img { width: 100%; height: 100%; object-fit: cover; }
         .journey-scene-copy { display: flex; max-width: 470px; flex-direction: column; align-items: flex-start; }
         .journey-scene-copy h3 { margin: 16px 0 0; color: var(--premium-wine); font-family: var(--premium-serif); font-size: clamp(35px, 4.2vw, 63px); font-weight: 500; letter-spacing: -.035em; line-height: .98; }
         .journey-scene-copy h3 span { display: block; }
@@ -302,7 +302,7 @@ function App() {
         .premium-story-photo::before { position: absolute; inset: 28px 26px 0 0; border: 1px solid var(--premium-gold); content: ''; }
         .premium-story-photo img { position: relative; display: block; width: 100%; height: auto; border-radius: 28px 150px 22px 22px; background: #f0ddd7; object-fit: contain; }
         .premium-story-copy blockquote { margin: 0; color: var(--premium-wine); font-family: var(--premium-serif); font-size: clamp(32px, 3.7vw, 55px); line-height: .99; }
-        .premium-story-copy blockquote::before { display: block; margin-bottom: 8px; color: var(--premium-gold); content: '“'; font-family: var(--premium-display); font-size: 79px; line-height: .35; }
+        .premium-story-copy blockquote::before { display: block; margin-bottom: 8px; color: var(--premium-gold); content: '\u201c'; font-family: var(--premium-display); font-size: 79px; line-height: .35; }
         .premium-story-copy p { max-width: 530px; margin: 28px 0 0; color: #795f63; line-height: 1.85; }
         .premium-signature { display: flex; align-items: center; gap: 13px; margin-top: 30px; color: var(--premium-rose); font-family: var(--premium-serif); font-size: 24px; }
         .premium-signature::before { width: 42px; height: 1px; background: var(--premium-gold); content: ''; }
@@ -459,7 +459,7 @@ function App() {
 
       <div className="premium-topline">
         <Flower2 size={13} aria-hidden="true" />
-        <span>A cherished family gathering · 12 October 2026</span>
+        <span>A cherished family gathering &middot; 12 October 2026</span>
         <Flower2 size={13} aria-hidden="true" />
       </div>
 
@@ -482,6 +482,7 @@ function App() {
           {menuOpen ? <X size={19} /> : <Menu size={19} />}
         </button>
       </header>
+
       <nav className={`premium-mobile-menu ${menuOpen ? 'open' : ''}`} aria-label="Mobile navigation">
         <a href="#premium-home" onClick={() => setMenuOpen(false)}>Home</a>
         <a href="#premium-story" onClick={() => setMenuOpen(false)}>Her story</a>
@@ -506,7 +507,7 @@ function App() {
           <h1>Our Little Princess's<br /><em>Naming Ceremony</em></h1>
           <p className="premium-lead">Our beloved girl is ready to be surrounded by the people whose love will guide her, steady her, and celebrate every chapter ahead.</p>
           <div className="premium-meta">
-            <span><CalendarDays size={15} /> Monday · 12 October 2026</span>
+            <span><CalendarDays size={15} /> Monday &middot; 12 October 2026</span>
             <span><Clock3 size={15} /> 10:00 AM IST</span>
           </div>
           <div className="premium-actions">
@@ -573,7 +574,7 @@ function App() {
           </div>
           <div className="premium-story-copy">
             <blockquote>She has made our world softer, brighter, and wonderfully full.</blockquote>
-            <p>We are overjoyed to share a beautiful milestone in our daughter’s life. Please join us as family, friends, and well-wishers gather to offer their blessings at this intimate beginning.</p>
+            <p>We are overjoyed to share a beautiful milestone in our daughter's life. Please join us as family, friends, and well-wishers gather to offer their blessings at this intimate beginning.</p>
             <div className="premium-signature">With love, S Udhay Kiran &amp; J S Mounika</div>
           </div>
         </div>
@@ -639,7 +640,7 @@ function App() {
           </div>
           <div className="premium-map" aria-label="Illustrated map showing JMS House">
             <div className="premium-map-pin"><Navigation size={20} fill="currentColor" /></div>
-            <div className="premium-map-label">JMS House · Biradhanapalli</div>
+            <div className="premium-map-label">JMS House &middot; Biradhanapalli</div>
           </div>
         </div>
       </section>
@@ -675,7 +676,7 @@ function App() {
 
       <footer className="premium-footer">
         <span>With love, S Udhay Kiran &amp; J S Mounika</span>
-        <span>A treasured family gathering · 12.10.2026</span>
+        <span>A treasured family gathering &middot; 12.10.2026</span>
       </footer>
 
       {activeImage !== null && (
